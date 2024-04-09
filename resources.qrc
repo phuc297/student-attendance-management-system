@@ -1,0 +1,12 @@
+<RCC>
+  <qresource prefix="assets">
+    <file>assets/icons/dictionary.png</file>
+    <file>assets/icons/exam.png</file>
+    <file>assets/icons/homeschooling.png</file>
+    <file>assets/icons/learning.png</file>
+    <file>assets/icons/student.png</file>
+    <file>assets/icons/teach.png</file>
+    <file>assets/icons/teacher.png</file>
+    <file>assets/icons/tutorial.png</file>
+  </qresource>
+</RCC>
