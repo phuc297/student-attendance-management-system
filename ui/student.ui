@@ -282,7 +282,7 @@ QPushButton{
      <widget class="QTextEdit" name="txt_email">
       <property name="geometry">
        <rect>
-        <x>90</x>
+        <x>100</x>
         <y>230</y>
         <width>411</width>
         <height>41</height>
@@ -394,11 +394,6 @@ QPushButton{
         <pointsize>10</pointsize>
        </font>
       </property>
-      <item>
-       <property name="text">
-        <string>New Item</string>
-       </property>
-      </item>
      </widget>
      <widget class="QComboBox" name="cbx_lop">
       <property name="geometry">
@@ -544,7 +539,7 @@ QPushButton{
      </widget>
     </widget>
    </widget>
-   <widget class="QTableWidget" name="tableWidget">
+   <widget class="QTableWidget" name="tbStudents">
     <property name="geometry">
      <rect>
       <x>580</x>
@@ -568,17 +563,12 @@ QPushButton{
     </column>
     <column>
      <property name="text">
-      <string>New Column</string>
-     </property>
-    </column>
-    <column>
-     <property name="text">
       <string>Mã lớp</string>
      </property>
     </column>
     <column>
      <property name="text">
-      <string>CCCD</string>
+      <string>CMND</string>
      </property>
     </column>
     <column>
@@ -589,6 +579,11 @@ QPushButton{
     <column>
      <property name="text">
       <string>Ngày sinh</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Email</string>
      </property>
     </column>
     <column>

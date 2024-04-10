@@ -37,7 +37,7 @@ class Ui_MainWindow(object):
         self.verticalLayout.setObjectName("verticalLayout")
         self.txt_taikhoan = QtWidgets.QTextEdit(parent=self.GridLayout)
         font = QtGui.QFont()
-        font.setPointSize(-1)
+        font.setPointSize(1)
         self.txt_taikhoan.setFont(font)
         self.txt_taikhoan.setStyleSheet("background-color: white;\n"
 "border: 2px solid black;\n"
@@ -72,7 +72,7 @@ class Ui_MainWindow(object):
         self.label.setGeometry(QtCore.QRect(50, 100, 221, 51))
         font = QtGui.QFont()
         font.setFamily("MS Shell Dlg 2")
-        font.setPointSize(-1)
+        font.setPointSize(1)
         font.setBold(True)
         font.setWeight(80)
         self.label.setFont(font)

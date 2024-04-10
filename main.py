@@ -3,7 +3,7 @@ from PyQt6.QtWidgets import QMainWindow, QApplication
 import sys
 import os
 from ui import *
-from menu import *
+from menu_form import *
 
 class MainProgram(QMainWindow):
     def __init__(self):
@@ -15,12 +15,12 @@ class MainProgram(QMainWindow):
         self.ui.btn_login.clicked.connect(self.openMainMenu)
     
     def openMainMenu(self):
-        self.window = QMainWindow()
+        self.newwindow = QMainWindow()
         self.ui_menu = MenuForm()
-        self.ui_menu.setupUi(self.window)
-        self.ui_menu.update()
+        self.ui_menu.setupUi(self.newwindow)
+        self.ui_menu.initialize()
         self.hide()
-        self.window.show()
+        self.newwindow.show()
         
         
 if __name__ == "__main__":

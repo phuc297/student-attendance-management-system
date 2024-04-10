@@ -4,10 +4,12 @@ from PyQt6.QtGui import QAction
 import sys
 import os
 from ui import *
+from bus.student_bus import *
+from student_widget import *
 
-class MenuForm(Ui_MainMenu, QMainWindow):
+class MenuForm(Ui_MainMenu):
 
-    def update(self):
+    def initialize(self):
 
         self.initializePage()
 
@@ -20,8 +22,6 @@ class MenuForm(Ui_MainMenu, QMainWindow):
         self.btnStat.clicked.connect(lambda: self.buttonClick(self.btnStat))
         self.btnAccount.clicked.connect(lambda: self.buttonClick(self.btnAccount))
 
-        
-    
     def initializePage(self):
         
         self.pageHome = QtWidgets.QWidget()
@@ -49,8 +49,8 @@ class MenuForm(Ui_MainMenu, QMainWindow):
         ui_home = Ui_Home()
         ui_home.setupUi(self.pageHome)
 
-        ui_student = Ui_Student()
-        ui_student.setupUi(self.pageStudent)
+        student_page = StudentWidget(self.pageStudent)
+        student_page.update()
 
         ui_teacher = Ui_Teacher()
         ui_teacher.setupUi(self.pageTeacher)
@@ -107,5 +107,7 @@ class MenuForm(Ui_MainMenu, QMainWindow):
             self.stackedWidget.setCurrentWidget(self.pageAccount)
             UIFunctions.resetStyle(self, btn)
             self.btnAccount.setStyleSheet(UIFunctions.selectMenu())
+
+
         
     
