@@ -4,10 +4,15 @@ from PyQt6.QtGui import QAction
 import sys
 import os
 
+from account_widget import AccountWidget
+from attendence_widget import AttendenceWidget
+from home_widget import HomeWidget
+from lesson_widget import LessonWidget
 from ui import *
 from student_widget import *
 from teacher_widget import *
 from subject_widget import *
+
 
 class MenuForm(Ui_MainMenu):
 
