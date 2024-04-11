@@ -37,7 +37,7 @@ class TeacherWidget(Ui_Teacher):
     def addgiangvien(self):
         hoTen = self.txt_hoten.toPlainText()
         SDT = self.txt_sdt.toPlainText()
-        giangvien = Teacher(hoTen,SDT)
+        giangvien = Teacher(None,hoTen,SDT)
         TeacherBUS.addlist(giangvien)
         self.loadList()
 
