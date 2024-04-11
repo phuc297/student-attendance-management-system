@@ -27,8 +27,8 @@ class TeacherDAL:
             conn= DatabaseConnector()
             db= conn.connect()
             cursor = db.cursor()
-            sql="insert into giangvien(maGV,hoTen,SDT) VALUES (%s, %s, %s)"
-            cursor.execute(sql,(giangvien.maGV,giangvien.hoTen,giangvien.SDT))
+            sql="insert into giangvien(hoTen,SDT) VALUES (%s, %s)"
+            cursor.execute(sql,(giangvien.hoTen,giangvien.SDT))
             db.commit()
            
             return True
@@ -39,6 +39,43 @@ class TeacherDAL:
         finally:
             cursor.close()
             db.close()
+
+    def delete(maGV):
+        try:        
+            conn= DatabaseConnector()
+            db= conn.connect()
+            cursor = db.cursor()
+            sql="delete from giangvien where maGV=%s"
+            cursor.execute(sql,(maGV,))
+            db.commit()
+           
+            return True
+        except Exception as e:
+            print('lỗi kết nối: ',e)
+            db.rollback()
+            return False
+        finally:
+            cursor.close()
+            db.close()
+
+    def update(giangvien):
+        try:        
+            conn= DatabaseConnector()
+            db= conn.connect()
+            cursor = db.cursor()
+            sql="update giangvien set hoTen=%s, SDT=%s  where maGV=%s"
+            cursor.execute(sql,(giangvien.hoTen,giangvien.SDT,giangvien.maGV,))
+            db.commit()
+           
+            return True
+        except Exception as e:
+            print('lỗi kết nối: ',e)
+            db.rollback()
+            return False
+        finally:
+            cursor.close()
+            db.close()
+
         
 
 

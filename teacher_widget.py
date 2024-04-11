@@ -8,6 +8,9 @@ class TeacherWidget(Ui_Teacher):
         self.loadList()
         self.tableteacher.itemClicked.connect(lambda: self.tableEvent())
         self.btn_luu.clicked.connect(lambda: self.addgiangvien())
+        self.btn_xoa.clicked.connect(lambda: self.deletegiangvien())
+        self.btn_sua.clicked.connect(lambda: self.updategiangvien())
+        self.btn_reset.clicked.connect(lambda: self.cleartxt())
     def loadList(self):
         list = TeacherBUS.getList()
        
@@ -29,11 +32,32 @@ class TeacherWidget(Ui_Teacher):
         self.txt_sdt.setText(self.tableteacher.item(cr, 2).text())
 
     def addgiangvien(self):
-        maGV=self.txt_id.text()
-        hoTen = self.txt_hoten.text()
-        SDT = self.txt_sdt.text()
-        giangvien = Teacher(maGV,hoTen,SDT)
+        hoTen = self.txt_hoten.toPlainText()
+        SDT = self.txt_sdt.toPlainText()
+        giangvien = Teacher(hoTen,SDT)
         TeacherBUS.addlist(giangvien)
+        self.loadList()
 
-    def update(self):
+    def deletegiangvien(self):
+        maGV=self.txt_id.toPlainText()
+        TeacherBUS.delete(maGV)
+        self.loadList()
+        self.cleartxt()
+
+    def updategiangvien(self):
+         maGV=self.txt_id.toPlainText()
+         hoTen = self.txt_hoten.toPlainText()
+         SDT = self.txt_sdt.toPlainText()
+         giangvien = Teacher(maGV,hoTen,SDT)
+         TeacherBUS.update(giangvien)
+         self.loadList()
+         self.cleartxt()
+
+    def update(self):   
         pass
+    
+    def cleartxt(self):
+        self.txt_id.clear()
+        self.txt_hoten.clear()
+        self.txt_sdt.clear()
+    

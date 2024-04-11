@@ -5,3 +5,7 @@ class TeacherBUS:
           return TeacherDAL.getList()
      def addlist (giangvien):
           return TeacherDAL.addlist(giangvien)
+     def delete(maGV):
+          return TeacherDAL.delete(maGV)
+     def update(giangvien):
+          return TeacherDAL.update(giangvien)
