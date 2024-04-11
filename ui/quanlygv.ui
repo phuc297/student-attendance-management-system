@@ -250,7 +250,7 @@ QPushButton{
         <x>1</x>
         <y>7</y>
         <width>461</width>
-        <height>54</height>
+        <height>98</height>
        </rect>
       </property>
       <layout class="QGridLayout" name="gridLayout">
@@ -270,17 +270,17 @@ QPushButton{
          </property>
         </widget>
        </item>
-       <item row="0" column="1">
-        <widget class="QPushButton" name="btn_xoa">
-         <property name="text">
-          <string>Xóa</string>
-         </property>
-        </widget>
-       </item>
        <item row="0" column="2">
         <widget class="QPushButton" name="btn_sua">
          <property name="text">
           <string>Sửa</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QPushButton" name="btn_xoa">
+         <property name="text">
+          <string>Xóa</string>
          </property>
         </widget>
        </item>
@@ -372,8 +372,23 @@ QPushButton{
         <height>31</height>
        </rect>
       </property>
+      <item>
+       <property name="text">
+        <string>Id</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Họ tên</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>SĐT</string>
+       </property>
+      </item>
      </widget>
-     <widget class="QTextEdit" name="txt_hoten_2">
+     <widget class="QTextEdit" name="txt_timkiem">
       <property name="geometry">
        <rect>
         <x>290</x>
@@ -409,7 +424,7 @@ QPushButton{
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="btn_xemtatca_2">
+        <widget class="QPushButton" name="btn_xemtatca">
          <property name="text">
           <string>Xem tất cả</string>
          </property>

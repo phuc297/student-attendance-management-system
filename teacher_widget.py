@@ -11,11 +11,14 @@ class TeacherWidget(Ui_Teacher):
         self.btn_xoa.clicked.connect(lambda: self.deletegiangvien())
         self.btn_sua.clicked.connect(lambda: self.updategiangvien())
         self.btn_reset.clicked.connect(lambda: self.cleartxt())
+        self.btn_timkiem.clicked.connect(lambda: self.timkiem())
+        self.btn_xemtatca.clicked.connect(lambda: self.loadList())
+
     def loadList(self):
         list = TeacherBUS.getList()
        
         self.tableteacher.setRowCount(len(list))
-        
+
         tablerow=0
         if list is not None:
             for row in list:
@@ -53,6 +56,91 @@ class TeacherWidget(Ui_Teacher):
          TeacherBUS.update(giangvien)
          self.loadList()
          self.cleartxt()
+
+    def locId(self, data):
+         list_teacher = []
+         for teacher_tuple in TeacherBUS.getList():
+            # Truyền các phần tử của tuple dựa trên thứ tự của các tham số trong constructor của Teacher
+            teacher = Teacher(teacher_tuple[0], teacher_tuple[1], teacher_tuple[2])
+            if str(teacher.maGV) == data:
+                 list_teacher.append(teacher)
+            
+            self.tableteacher.setRowCount(len(list_teacher))      
+            tablerow = 0
+            if list_teacher:
+                 for teacher in list_teacher:
+                     self.tableteacher.setItem(tablerow, 0, QtWidgets.QTableWidgetItem(str(teacher.maGV)))
+                     self.tableteacher.setItem(tablerow, 1, QtWidgets.QTableWidgetItem(teacher.hoTen))
+                     self.tableteacher.setItem(tablerow, 2, QtWidgets.QTableWidgetItem(str(teacher.SDT)))        
+                     tablerow += 1
+                 
+            else:
+                print("Không tìm thấy giảng viên với mã", data)
+            pass
+
+
+    def locHoten(self,data):
+         list_teacher = []
+         for teacher_tuple in TeacherBUS.getList():
+            # Truyền các phần tử của tuple dựa trên thứ tự của các tham số trong constructor của Teacher
+            teacher = Teacher(teacher_tuple[0], teacher_tuple[1], teacher_tuple[2])
+            if str(teacher.hoTen) == data:
+                 list_teacher.append(teacher)
+            
+            self.tableteacher.setRowCount(len(list_teacher))      
+            tablerow = 0
+            if list_teacher:
+                 for teacher in list_teacher:
+                     self.tableteacher.setItem(tablerow, 0, QtWidgets.QTableWidgetItem(str(teacher.maGV)))
+                     self.tableteacher.setItem(tablerow, 1, QtWidgets.QTableWidgetItem(teacher.hoTen))
+                     self.tableteacher.setItem(tablerow, 2, QtWidgets.QTableWidgetItem(str(teacher.SDT)))        
+                     tablerow += 1
+                 
+            else:
+                print("Không tìm thấy giảng viên với mã", data)
+            pass
+
+    def locSDT(self,data):
+        list_teacher = []
+        for teacher_tuple in TeacherBUS.getList():
+            # Truyền các phần tử của tuple dựa trên thứ tự của các tham số trong constructor của Teacher
+            teacher = Teacher(teacher_tuple[0], teacher_tuple[1], teacher_tuple[2])
+            if str(teacher.SDT) == data:
+                 list_teacher.append(teacher)
+            
+            self.tableteacher.setRowCount(len(list_teacher))      
+            tablerow = 0
+            if list_teacher:
+                 for teacher in list_teacher:
+                     self.tableteacher.setItem(tablerow, 0, QtWidgets.QTableWidgetItem(str(teacher.maGV)))
+                     self.tableteacher.setItem(tablerow, 1, QtWidgets.QTableWidgetItem(teacher.hoTen))
+                     self.tableteacher.setItem(tablerow, 2, QtWidgets.QTableWidgetItem(str(teacher.SDT)))        
+                     tablerow += 1
+                 
+            else:
+                print("Không tìm thấy giảng viên với mã", data)
+            pass
+                
+
+
+    def timkiem (self):
+        kieuloc=self.comboBoxtimkiem.currentIndex()
+        dataloc=self.txt_timkiem.toPlainText()
+        if dataloc is None:
+            print('chưa nhập dữ liệu !')
+        else:
+            switch={
+                0:  self.locId,
+                1:  self.locHoten,
+                2:  self.locSDT,
+                    }
+        if kieuloc in switch:
+            # Gọi hành động tương ứng với giá trị
+            switch[kieuloc](dataloc)
+        else:
+            # Xử lý trường hợp không tìm thấy giá trị
+            print("Không tìm thấy hành động cho giá trị này")
+
 
     def update(self):   
         pass

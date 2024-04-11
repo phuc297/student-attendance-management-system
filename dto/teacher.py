@@ -4,9 +4,7 @@ class Teacher:
         self.maGV = maGV
         self.hoTen = hoTen
         self.SDT = SDT
-    def __init__(self, hoTen, SDT):
-        self.hoTen = hoTen
-        self.SDT = SDT
+  
     
     def print_info(self):
         print("Thông tin giảng viên:")

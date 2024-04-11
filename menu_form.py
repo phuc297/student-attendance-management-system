@@ -3,10 +3,13 @@ from PyQt6.QtWidgets import QMainWindow, QApplication, QMessageBox
 from PyQt6.QtGui import QAction
 import sys
 import os
+
 from ui import *
 from bus.student_bus import *
 from student_widget import *
 from teacher_widget import *
+from subject_widget import *
+
 
 class MenuForm(Ui_MainMenu):
 
