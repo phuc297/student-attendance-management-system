@@ -8,7 +8,7 @@ class AccountDAL:
             conn = DatabaseConnector()
             db = conn.connect()
             cursor = db.cursor()
-            cursor.execute("select * from account")          
+            cursor.execute("select maTK, matKhau from taikhoan")          
 
             for x in cursor:
                 list.append(x)
@@ -20,14 +20,13 @@ class AccountDAL:
         except:
             pass
         return list
-    def addlist (giangvien):
-       
+    def add(account):
         try: 
             conn= DatabaseConnector()
             db= conn.connect()
             cursor = db.cursor()
-            sql="insert into giangvien(maGV,hoTen,SDT) VALUES (%s, %s, %s)"
-            cursor.execute(sql,(giangvien.maGV,giangvien.hoTen,giangvien.SDT))
+            sql="insert into taikhoan(maGV,hoTen,SDT) VALUES (%s, %s)"
+            cursor.execute(sql,(account.matk,account.matkhau))
             db.commit()
            
             return True

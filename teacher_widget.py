@@ -20,7 +20,6 @@ class TeacherWidget(Ui_Teacher):
                 self.tableteacher.setItem(tablerow, 1, QtWidgets.QTableWidgetItem(str(row[1])))
                 self.tableteacher.setItem(tablerow, 2, QtWidgets.QTableWidgetItem(str(row[2])))        
                 tablerow += 1
-                print(row)
     
 
     def tableEvent(self):

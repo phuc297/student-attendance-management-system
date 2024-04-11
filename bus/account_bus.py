@@ -1,7 +1,7 @@
 from dal.account_dal import *
 
-class TeacherBUS:
+class AccountBUS:
      def getList():
-          return TeacherDAL.getList()
-     def addlist (giangvien):
-          return TeacherDAL.addlist(giangvien)
+          return AccountDAL.getList()
+     def add(account):
+          return AccountDAL.add(account)
