@@ -1,5 +1,5 @@
-from ui.ui_student import *
-from bus.student_bus import *
+from ui.ui_account import *
+from bus.account_bus import *
 
 class StudentWidget(Ui_Student):
 
