@@ -6,6 +6,7 @@ import os
 from ui import *
 from bus.student_bus import *
 from student_widget import *
+from subject_widget import *
 
 class MenuForm(Ui_MainMenu):
 
@@ -55,14 +56,18 @@ class MenuForm(Ui_MainMenu):
         ui_teacher = Ui_Teacher()
         ui_teacher.setupUi(self.pageTeacher)
 
-        ui_class = Ui_Class()
-        ui_class.setupUi(self.pageClass)
+        subject_page = SubjectWidget(self.pageClass)
+        subject_page.update()
+
 
         ui_attendence = Ui_Attendence()
         ui_attendence.setupUi(self.pageAttendance)
 
         ui_account = Ui_Account()
         ui_account.setupUi(self.pageAccount)
+
+        ui_lession = Ui_Lession()
+        ui_lession.setupUi(self.pageSession)
 
     def buttonClick(self, btn):
 
