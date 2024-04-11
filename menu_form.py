@@ -6,7 +6,11 @@ import os
 from ui import *
 from bus.student_bus import *
 from student_widget import *
+<<<<<<< HEAD
 from subject_widget import *
+=======
+from teacher_widget import *
+>>>>>>> fdfc94e165e36b585a7166d2634919aa6004fe4b
 
 class MenuForm(Ui_MainMenu):
 
@@ -53,8 +57,11 @@ class MenuForm(Ui_MainMenu):
         student_page = StudentWidget(self.pageStudent)
         student_page.update()
 
-        ui_teacher = Ui_Teacher()
-        ui_teacher.setupUi(self.pageTeacher)
+        teacher_page = TeacherWidget(self.pageTeacher)
+        teacher_page.update()
+
+        # ui_teacher = Ui_Teacher()
+        # ui_teacher.setupUi(self.pageTeacher)
 
         subject_page = SubjectWidget(self.pageClass)
         subject_page.update()
