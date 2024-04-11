@@ -160,6 +160,9 @@ QPushButton{
       </property>
      </widget>
      <widget class="QTextEdit" name="txt_id">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
       <property name="geometry">
        <rect>
         <x>120</x>
@@ -172,6 +175,12 @@ QPushButton{
        <font>
         <pointsize>10</pointsize>
        </font>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+      <property name="acceptRichText">
+       <bool>false</bool>
       </property>
      </widget>
      <widget class="QTextEdit" name="txt_hoten">
