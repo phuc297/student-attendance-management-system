@@ -11,7 +11,7 @@ class StudentWidget(Ui_Student):
     def loadList(self):
         list = StudentBUS.getList()
         self.tbStudents.setRowCount(list.__len__())
-        tablerow=0
+        tablerow = 0
         if list is not None:
             for row in list:
                 self.tbStudents.setItem(tablerow, 0, QtWidgets.QTableWidgetItem(str(row[0])))
