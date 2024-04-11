@@ -4,11 +4,13 @@ from PyQt6.QtGui import QAction
 import sys
 import os
 from ui import *
-from bus.student_bus import *
 from student_widget import *
 from teacher_widget import *
 from subject_widget import *
 from account_widget import *
+from home_widget import *
+from lesson_widget import *
+from attendence_widget import *
 
 class MenuForm(Ui_MainMenu):
 
@@ -49,26 +51,19 @@ class MenuForm(Ui_MainMenu):
         UIFunctions.resetStyle(self, self.btnHome)
         self.btnHome.setStyleSheet(UIFunctions.selectMenu())
 
-        ui_home = Ui_Home()
-        ui_home.setupUi(self.pageHome)
+        home_page = HomeWidget(self.pageHome)
 
         student_page = StudentWidget(self.pageStudent)
-        student_page.update()
 
         teacher_page = TeacherWidget(self.pageTeacher)
-        teacher_page.update()
 
         subject_page = SubjectWidget(self.pageClass)
-        subject_page.update()
 
         account_page = AccountWidget(self.pageAccount)
-        account_page.update()
 
-        ui_attendence = Ui_Attendence()
-        ui_attendence.setupUi(self.pageAttendance)
+        attendence_page = AttendenceWidget(self.pageAttendance)
 
-        ui_lession = Ui_Lession()
-        ui_lession.setupUi(self.pageSession)
+        lesson_page = LessonWidget(self.pageSession)
 
     def buttonClick(self, btn):
 
