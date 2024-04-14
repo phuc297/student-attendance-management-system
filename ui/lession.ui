@@ -157,7 +157,7 @@ padding: 15px 5px;
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>300</y>
+       <y>350</y>
        <width>101</width>
        <height>31</height>
       </rect>
@@ -170,7 +170,7 @@ padding: 15px 5px;
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>360</y>
+       <y>410</y>
        <width>91</width>
        <height>31</height>
       </rect>
@@ -179,7 +179,7 @@ padding: 15px 5px;
       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Tên môn học&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
     </widget>
-    <widget class="QTextEdit" name="textEdit">
+    <widget class="QTextEdit" name="txt_maBH">
      <property name="geometry">
       <rect>
        <x>130</x>
@@ -189,7 +189,7 @@ padding: 15px 5px;
       </rect>
      </property>
     </widget>
-    <widget class="QTextEdit" name="textEdit_2">
+    <widget class="QTextEdit" name="txt_gioBD">
      <property name="geometry">
       <rect>
        <x>130</x>
@@ -199,7 +199,7 @@ padding: 15px 5px;
       </rect>
      </property>
     </widget>
-    <widget class="QTextEdit" name="textEdit_3">
+    <widget class="QTextEdit" name="txt_gioKT">
      <property name="geometry">
       <rect>
        <x>130</x>
@@ -213,35 +213,35 @@ padding: 15px 5px;
      <property name="geometry">
       <rect>
        <x>40</x>
-       <y>440</y>
+       <y>490</y>
        <width>331</width>
        <height>47</height>
       </rect>
      </property>
      <layout class="QHBoxLayout" name="horizontalLayout">
       <item>
-       <widget class="QPushButton" name="pushButton_3">
+       <widget class="QPushButton" name="btn_them">
         <property name="text">
          <string>Thêm mới</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton_2">
+       <widget class="QPushButton" name="btn_sua">
         <property name="text">
          <string>Cập nhật</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton_4">
+       <widget class="QPushButton" name="btn_xoa">
         <property name="text">
          <string>Xóa</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton">
+       <widget class="QPushButton" name="btn_lammoi">
         <property name="styleSheet">
          <string notr="true"/>
         </property>
@@ -252,17 +252,40 @@ padding: 15px 5px;
       </item>
      </layout>
     </widget>
-    <widget class="QTextEdit" name="textEdit_5">
+    <widget class="QDateEdit" name="ngayHoc">
      <property name="geometry">
       <rect>
-       <x>130</x>
+       <x>129</x>
        <y>240</y>
        <width>241</width>
        <height>31</height>
       </rect>
      </property>
     </widget>
-    <widget class="QTextEdit" name="textEdit_6">
+    <widget class="QComboBox" name="cb_mh">
+     <property name="geometry">
+      <rect>
+       <x>130</x>
+       <y>410</y>
+       <width>241</width>
+       <height>31</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_6">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>300</y>
+       <width>91</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Lớp&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="cb_lop">
      <property name="geometry">
       <rect>
        <x>130</x>
@@ -272,18 +295,18 @@ padding: 15px 5px;
       </rect>
      </property>
     </widget>
-    <widget class="QTextEdit" name="textEdit_7">
+    <widget class="QTextEdit" name="txt_GV">
      <property name="geometry">
       <rect>
        <x>130</x>
-       <y>360</y>
+       <y>350</y>
        <width>241</width>
        <height>31</height>
       </rect>
      </property>
     </widget>
    </widget>
-   <widget class="QFrame" name="table_bh">
+   <widget class="QFrame" name="frame1">
     <property name="geometry">
      <rect>
       <x>500</x>
@@ -316,7 +339,7 @@ padding: 15px 5px;
       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Tìm kiếm theo:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
     </widget>
-    <widget class="QComboBox" name="comboBox_2">
+    <widget class="QComboBox" name="cb_timkiem">
      <property name="geometry">
       <rect>
        <x>120</x>
@@ -325,8 +348,18 @@ padding: 15px 5px;
        <height>31</height>
       </rect>
      </property>
+     <item>
+      <property name="text">
+       <string>Tên môn học</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Giảng viên</string>
+      </property>
+     </item>
     </widget>
-    <widget class="QTextEdit" name="textEdit_4">
+    <widget class="QTextEdit" name="txt_timkiem">
      <property name="geometry">
       <rect>
        <x>250</x>
@@ -336,7 +369,7 @@ padding: 15px 5px;
       </rect>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_5">
+    <widget class="QPushButton" name="btn_timkiem">
      <property name="geometry">
       <rect>
        <x>420</x>
@@ -349,7 +382,7 @@ padding: 15px 5px;
       <string>Tìm kiếm</string>
      </property>
     </widget>
-    <widget class="QTableWidget" name="tableWidget">
+    <widget class="QTableWidget" name="table_bh">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -380,7 +413,7 @@ padding: 15px 5px;
      </column>
      <column>
       <property name="text">
-       <string>Tên giảng viên</string>
+       <string>Lớp</string>
       </property>
      </column>
      <column>
@@ -388,6 +421,21 @@ padding: 15px 5px;
        <string>Tên môn học</string>
       </property>
      </column>
+     <column>
+      <property name="text">
+       <string>Giảng viên</string>
+      </property>
+     </column>
+    </widget>
+    <widget class="QDateEdit" name="chonNgayHoc">
+     <property name="geometry">
+      <rect>
+       <x>670</x>
+       <y>30</y>
+       <width>161</width>
+       <height>31</height>
+      </rect>
+     </property>
     </widget>
    </widget>
   </widget>

@@ -1,19 +1,20 @@
 
 from dal.subject_dal import *
+from dto.subject import *; 
 
 
 class subjectBUS:
     # def __init__(self, db):
     #     self.subject_dal = subjectDAL(db)
 
-    # def add_subject(self, subject_dto):
-    #     self.subject_dal.add_subject(subject_dto)
+    def add (subject):
+          return subjectDAL.add(subject)
 
-    # def update_subject(self, maMH, tenMH, maGV):
-    #     self.subject_dal.update_subject(maMH, tenMH, maGV)
+    def update_subject(subject):
+        return subjectDAL.update(subject)
 
-    # def delete_subject(self, maMH):
-    #     self.subject_dal.delete_subject(maMH)
+    def delete(maMH):
+        return subjectDAL.delete(maMH)
 
     def get_all():
         return subjectDAL.getList()

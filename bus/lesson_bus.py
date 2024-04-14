@@ -1,17 +1,19 @@
+
 from dal.lesson_dal import *
+from dto.lesson import *; 
 
-class LessonBUS:
-    def __init__(self, db):
-        self.lesson_dal = lessonDAL(db)
 
-    def add_lesson(self, lesson_dto):
-        self.lesson_dal.add_lesson(lesson_dto)
+class lessonBUS:
+    
 
-    def update_lesson(self, maBH, maMH, maLop, gioBD, gioKT, ngay):
-        self.lesson_dal.update_lesson(maBH, maMH, maLop, gioBD, gioKT, ngay)
+    def add (lesson):
+          return lessonDAL.add(lesson)
 
-    def delete_lesson(self, maBH):
-        self.lesson_dal.delete_lesson(maBH)
+    def update_subject(lesson):
+        return lessonDAL.update(lesson)
 
-    def get_all_lessons(self):
-        return self.lesson_dal.get_all()
+    def delete(lesson):
+        return lessonDAL.delete(lesson)
+
+    def get_all():
+        return lessonDAL.getList()
