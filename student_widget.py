@@ -29,7 +29,7 @@ class StudentWidget(Ui_Student):
         self.txt_hoten.setText(self.tbStudents.item(cr, 1).text())
         self.txt_namsinh.setText(self.tbStudents.item(cr, 2).text())
         self.txt_cccd.setText(self.tbStudents.item(cr, 3).text())
-        self.txt_gioitinh.setText(self.tbStudents.item(cr, 4).text())
+        self.cbx_gioitinh.setCurrentText(self.tbStudents.item(cr, 4).text())
         self.txt_email.setText(self.tbStudents.item(cr, 5).text())
         self.txt_sdt.setText(self.tbStudents.item(cr, 6).text())
         self.txt_diachi.setText(self.tbStudents.item(cr, 7).text())
