@@ -26,7 +26,7 @@ class lessonDAL:
         return list
     
 
-    def add(lesson):
+    def  add(lesson):
        
         try: 
             conn= DatabaseConnector()
@@ -49,22 +49,21 @@ class lessonDAL:
     
     def update(lesson):
         try:        
-            conn= DatabaseConnector()
-            db= conn.connect()
+            conn = DatabaseConnector()
+            db = conn.connect()
             cursor = db.cursor()
-            sql="update buoihoc set maMH=%s, maLop=%s gioBD=%s gioKT=%s ngay=%s where maBH=%s"
-            cursor.execute(sql,(lesson.maMH, lesson.maLop, lesson.gioBD, lesson.gioKT, lesson.ngay))
+            sql = "UPDATE buoihoc SET maMH=%s, maLop=%s, gioBD=%s, gioKT=%s, ngay=%s WHERE maBH=%s"
+            cursor.execute(sql, (lesson.maMH, lesson.maLop, lesson.gioBD, lesson.gioKT, lesson.ngay, lesson.maBH))
             db.commit()
-           
             return True
         except Exception as e:
-            print('lỗi kết nối: ',e)
+            print('lỗi kết nối: ', e)
             db.rollback()
             return False
         finally:
             cursor.close()
             db.close()
-            
+
     
     
     def delete(maBH):
@@ -72,7 +71,7 @@ class lessonDAL:
             conn= DatabaseConnector()
             db= conn.connect()
             cursor = db.cursor()
-            sql="delete from buoihoc where maMH=%s"
+            sql="delete from buoihoc where maBH=%s"
             cursor.execute(sql,(maBH,))
             db.commit()
            

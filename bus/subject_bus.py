@@ -18,3 +18,5 @@ class subjectBUS:
 
     def get_all():
         return subjectDAL.getList()
+    def getIDSubject (tenMH):
+        return subjectDAL.getIDMH(tenMH)

@@ -1,15 +1,16 @@
 from ui.ui_teacher import *
 from bus.teacher_bus import *
 from dto.teacher import Teacher
+from PyQt6.QtWidgets import QMessageBox
 class TeacherWidget(Ui_Teacher):
    
     def __init__(self, page):
         self.setupUi(page)
         self.loadList()
         self.tableteacher.itemClicked.connect(lambda: self.tableEvent())
-        self.btn_luu.clicked.connect(lambda: self.addgiangvien())
-        self.btn_xoa.clicked.connect(lambda: self.deletegiangvien())
-        self.btn_sua.clicked.connect(lambda: self.updategiangvien())
+        self.btn_luu.clicked.connect(lambda: self.addgiangvien(page))
+        self.btn_xoa.clicked.connect(lambda: self.deletegiangvien(page))
+        self.btn_sua.clicked.connect(lambda: self.updategiangvien(page))
         self.btn_reset.clicked.connect(lambda: self.cleartxt())
         self.btn_timkiem.clicked.connect(lambda: self.timkiem())
         self.btn_xemtatca.clicked.connect(lambda: self.loadList())
@@ -34,19 +35,45 @@ class TeacherWidget(Ui_Teacher):
         self.txt_hoten.setText(self.tableteacher.item(cr, 1).text())
         self.txt_sdt.setText(self.tableteacher.item(cr, 2).text())
 
+<<<<<<< HEAD
     def addgiangvien(self):
         hoTen = self.txt_hoten.toPlainText()
         SDT = self.txt_sdt.toPlainText()
         giangvien = Teacher(None,hoTen,SDT)
         TeacherBUS.add(giangvien)
         self.loadList()
+=======
+    def addgiangvien(self,page):
+        if (self.txt_id.toPlainText()==""):
+        
+            hoTen = self.txt_hoten.toPlainText()
+            SDT = self.txt_sdt.toPlainText()
+>>>>>>> 5c754b8c457cd64151a4da85cb3e939a7412a93f
 
-    def deletegiangvien(self):
+            # Kiểm tra xem các trường dữ liệu có bị thiếu không
+            if not hoTen.strip() or not SDT.strip():
+                QMessageBox.warning(page, "Lỗi", "Vui lòng nhập đầy đủ thông tin.")
+                return
+
+            giangvien = Teacher(None, hoTen, SDT)
+            TeacherBUS.addlist(giangvien)
+            self.loadList()
+        else:
+            QMessageBox.warning(page, "Lỗi", "vui lòng làm mới thông tin trước khi thêm!")
+
+
+    def deletegiangvien(self,page):
         maGV=self.txt_id.toPlainText()
+
+        if not maGV.strip() :
+           QMessageBox.warning(page, "Lỗi", "Vui lòng chọn giảng viên cần xoá !")
+           return
+        
         TeacherBUS.delete(maGV)
         self.loadList()
         self.cleartxt()
 
+<<<<<<< HEAD
     def updategiangvien(self):
         maGV=self.txt_id.toPlainText()
         hoTen = self.txt_hoten.toPlainText()
@@ -55,91 +82,45 @@ class TeacherWidget(Ui_Teacher):
         TeacherBUS.update(giangvien)
         self.loadList()
         self.cleartxt()
+=======
+    def updategiangvien(self,page):
+         maGV=self.txt_id.toPlainText()
+         hoTen = self.txt_hoten.toPlainText()
+         SDT = self.txt_sdt.toPlainText()
 
-    def locId(self, data):
-         list_teacher = []
-         for teacher_tuple in TeacherBUS.getList():
-            # Truyền các phần tử của tuple dựa trên thứ tự của các tham số trong constructor của Teacher
-            teacher = Teacher(teacher_tuple[0], teacher_tuple[1], teacher_tuple[2])
-            if str(teacher.maGV) == data:
-                 list_teacher.append(teacher)
-            
-            self.tableteacher.setRowCount(len(list_teacher))      
-            tablerow = 0
-            if list_teacher:
-                 for teacher in list_teacher:
-                     self.tableteacher.setItem(tablerow, 0, QtWidgets.QTableWidgetItem(str(teacher.maGV)))
-                     self.tableteacher.setItem(tablerow, 1, QtWidgets.QTableWidgetItem(teacher.hoTen))
-                     self.tableteacher.setItem(tablerow, 2, QtWidgets.QTableWidgetItem(str(teacher.SDT)))        
-                     tablerow += 1
-                 
-            else:
-                print("Không tìm thấy giảng viên với mã", data)
-            pass
+         if not hoTen.strip() or not SDT.strip() or not maGV.strip():
+           QMessageBox.warning(page, "Lỗi", "Vui lòng nhập đầy đủ thông tin.")
+           return
+         
+         giangvien = Teacher(maGV,hoTen,SDT)
+         TeacherBUS.update(giangvien)
+         self.loadList()
+         self.cleartxt()
+>>>>>>> 5c754b8c457cd64151a4da85cb3e939a7412a93f
 
+    def timkiem(self):
+        keyword = self.comboBoxtimkiem.currentText()
+       
 
-    def locHoten(self,data):
-         list_teacher = []
-         for teacher_tuple in TeacherBUS.getList():
-            # Truyền các phần tử của tuple dựa trên thứ tự của các tham số trong constructor của Teacher
-            teacher = Teacher(teacher_tuple[0], teacher_tuple[1], teacher_tuple[2])
-            if str(teacher.hoTen) == data:
-                 list_teacher.append(teacher)
-            
-            self.tableteacher.setRowCount(len(list_teacher))      
-            tablerow = 0
-            if list_teacher:
-                 for teacher in list_teacher:
-                     self.tableteacher.setItem(tablerow, 0, QtWidgets.QTableWidgetItem(str(teacher.maGV)))
-                     self.tableteacher.setItem(tablerow, 1, QtWidgets.QTableWidgetItem(teacher.hoTen))
-                     self.tableteacher.setItem(tablerow, 2, QtWidgets.QTableWidgetItem(str(teacher.SDT)))        
-                     tablerow += 1
-                 
-            else:
-                print("Không tìm thấy giảng viên với mã", data)
-            pass
+        if keyword == "Id":
+             column_index = 0
+        elif keyword == "Họ tên":
+             column_index = 1
+        elif keyword == "SĐT":
+             column_index = 2
 
-    def locSDT(self,data):
-        list_teacher = []
-        for teacher_tuple in TeacherBUS.getList():
-            # Truyền các phần tử của tuple dựa trên thứ tự của các tham số trong constructor của Teacher
-            teacher = Teacher(teacher_tuple[0], teacher_tuple[1], teacher_tuple[2])
-            if str(teacher.SDT) == data:
-                 list_teacher.append(teacher)
-            
-            self.tableteacher.setRowCount(len(list_teacher))      
-            tablerow = 0
-            if list_teacher:
-                 for teacher in list_teacher:
-                     self.tableteacher.setItem(tablerow, 0, QtWidgets.QTableWidgetItem(str(teacher.maGV)))
-                     self.tableteacher.setItem(tablerow, 1, QtWidgets.QTableWidgetItem(teacher.hoTen))
-                     self.tableteacher.setItem(tablerow, 2, QtWidgets.QTableWidgetItem(str(teacher.SDT)))        
-                     tablerow += 1
-                 
-            else:
-                print("Không tìm thấy giảng viên với mã", data)
-            pass
-                
+        if column_index is not None:
+            search_text = self.txt_timkiem.toPlainText().lower()
 
-
-    def timkiem (self):
-        kieuloc=self.comboBoxtimkiem.currentIndex()
-        dataloc=self.txt_timkiem.toPlainText()
-        if dataloc is None:
-            print('chưa nhập dữ liệu !')
-        else:
-            switch={
-                0:  self.locId,
-                1:  self.locHoten,
-                2:  self.locSDT,
-                    }
-        if kieuloc in switch:
-            # Gọi hành động tương ứng với giá trị
-            switch[kieuloc](dataloc)
-        else:
-            # Xử lý trường hợp không tìm thấy giá trị
-            print("Không tìm thấy hành động cho giá trị này")
-
+        for row in range(self.tableteacher.rowCount()):
+            item = self.tableteacher.item(row, column_index)
+            if item is not None:
+                cell_text = item.text().lower()
+                # Kiểm tra xem ô có chứa từ khóa tìm kiếm hay không
+                if search_text in cell_text:
+                    self.tableteacher.setRowHidden(row, False)  # Hiện hàng nếu tìm thấy
+                else:
+                    self.tableteacher.setRowHidden(row, True)
 
     def update(self):   
         pass

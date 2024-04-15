@@ -9,11 +9,11 @@ class lessonBUS:
     def add (lesson):
           return lessonDAL.add(lesson)
 
-    def update_subject(lesson):
+    def update_lession(lesson):
         return lessonDAL.update(lesson)
 
-    def delete(lesson):
-        return lessonDAL.delete(lesson)
+    def delete(maBH):
+        return lessonDAL.delete(maBH)
 
     def get_all():
         return lessonDAL.getList()
