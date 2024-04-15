@@ -1,3 +1,4 @@
+import datetime
 from ui.ui_lesson import *
 from dal.lesson_dal import *
 from bus.lesson_bus import *
@@ -9,6 +10,7 @@ from dto.subject import *
 from dto.teacher import *
 import tkinter as tk
 from tkinter import messagebox
+from ui.ui_lesson import *
 
 
 
@@ -19,11 +21,12 @@ class LessonWidget(Ui_Lesson):
         self.loadList()  
         self.loadCB()
         self.table_bh.itemClicked.connect(lambda: self.tableEvent())
-        # self.btn_them.clicked.connect(lambda: self.addMH())
-        # self.btn_lammoi.clicked.connect(lambda: self.clear())
-        # self.btn_sua.clicked.connect(lambda: self.editMH())
-        # self.btn_xoa.clicked.connect(lambda: self.delete())
-        # self.btn_timkiem.clicked.connect(lambda: self.timKiem())
+        self.btn_them.clicked.connect(lambda: self.addMH())
+        self.btn_lammoi.clicked.connect(lambda: self.clear())
+        self.btn_sua.clicked.connect(lambda: self.editMH())
+        self.btn_xoa.clicked.connect(lambda: self.delete())
+        self.btn_timkiem.clicked.connect(lambda: self.timKiem())
+        
         
         
     def loadList(self):
@@ -58,6 +61,7 @@ class LessonWidget(Ui_Lesson):
                        
                         
                 tablerow += 1
+        
     
     def tableEvent(self):
         cr = self.table_bh.currentRow()
@@ -81,7 +85,9 @@ class LessonWidget(Ui_Lesson):
         text_from_table2 = self.table_bh.item(cr, 5).text()
         index2 = self.cb_mh.findText(text_from_table2)  
         if index2 != -1:  
-          self.cb_mh.setCurrentIndex(index2)  
+          self.cb_mh.setCurrentIndex(index2)
+
+        
 
         
        
@@ -104,88 +110,110 @@ class LessonWidget(Ui_Lesson):
         
             
 
-    # def addMH(self):
-    #   if(self.txt_maMH.toPlainText() == ""):
-    #     tenMH=self.txt_tenMH.toPlainText()
-    #     gv = self.cb_gv.currentText()
-    #     magv = None
-    #     list_gv = TeacherBUS.getList()
-    #     for row in list_gv: 
-    #         if str(row[1]) == gv: 
-    #             magv = int(row[0])
+    def addMH(self):
+       if(self.txt_maBH.toPlainText() == ""):
+         gioBD=self.txt_gioBD.toPlainText()
+         gioKT=self.txt_gioKT.toPlainText()
+         tenLop=self.cb_lop.currentText()
+         tenMH=self.cb_mh.currentText()
          
-    #     mh = subject(None,tenMH,magv)
-    #     subjectBUS.add(mh)
-    #     self.loadList()
-    #     self.clear()
+         ngay = self.chonNgayHoc.date()
+         day = datetime.date(ngay.year(), ngay.month(), ngay.day())
 
-      
-    #   else: 
-    #       messagebox.showinfo("", "Bạn cần làm mới trước khi thêm !")
+         maMH= subjectBUS.getIDSubject(tenMH)
+         maLop=ClassBUS.getIdLop(tenLop)
+        
+         lession=buoiHoc(None,maMH,maLop,gioKT,gioBD,day)
+         lessonBUS.add(lession)
+         self.loadList()
+          
+       else: 
+           messagebox.showinfo("", "Bạn cần làm mới trước khi thêm !")
+          
+    def clear (self):
+       self.txt_gioBD.clear()
+       self.txt_gioBD.clear()
+       self.txt_gioKT.clear()
+       self.txt_GV.clear()
+       self.txt_maBH.clear()
+       self.chonNgayHoc.clear()
+    
+    def editMH(self):
+        if not self.table_bh.selectedItems():
+            messagebox.showinfo("", "Vui lòng chọn một môn học để chỉnh sửa!")
+            return
+        else:
+
+          tenMH = self.cb_mh.currentText()
+          tenLop = self.cb_lop.currentText()
+          maMH= subjectBUS.getIDSubject(tenMH)
+          maLop=ClassBUS.getIdLop(tenLop)
+          gv = self.txt_GV.toPlainText()
+          ngay = self.chonNgayHoc.date()
+          maBH=self.txt_maBH.toPlainText()
+          day = datetime.date(ngay.year(), ngay.month(), ngay.day())
+          
+          gioBD=self.txt_gioBD.toPlainText()
+          gioKT=self.txt_gioKT.toPlainText()
+
+          list_gv = TeacherBUS.getList()
+          
+        
+          if (self.txt_GV.toPlainText() == ""):
+              messagebox.showinfo("", "Vui lònng không để trống giảng viên")
+        
+          else:
+            current_row = self.table_bh.currentRow()
+            print(current_row)
+            for row in list_gv:
+                if str(row[1]) == gv:
+                    ten_gv = str(row[1])  # Lấy tên giáo viên từ danh sách
+                         # Thực hiện hành động mong muốn, ví dụ: đổ tên giáo viên lên bảng
+                    # Ví dụ:
+                    self.table_bh.setItem(current_row, 6, QtWidgets.QTableWidgetItem(ten_gv))        
+            lession= buoiHoc(maBH,maMH,maLop,gioBD,gioKT,day)
+    
+            lessonBUS.update_lession(lession)
+
+            self.loadList()
+            self.clear()
+         
+
           
     
     
-    # def editMH(self):
-    #    if not self.table_mh.selectedItems():
-    #        messagebox.showinfo("", "Vui lòng chọn một môn học để chỉnh sửa!")
-    #        return
-    #    else:
-
-    #      maMH = self.txt_maMH.toPlainText()
-    #      tenMH = self.txt_tenMH.toPlainText()
-    #      gv = self.cb_gv.currentText()
-    #      magv = None
-    #      list_gv = TeacherBUS.getList()
-    #      for row in list_gv:
-    #        if str(row[1]) == gv:
-    #          magv = int(row[0])
-        
-    #      if (self.cb_gv.currentText() == ""):
-    #          messagebox.showinfo("", "Vui lònng không để trống giảng viên")
-        
-    #      else:
-    #       mh = subject(maMH, tenMH, magv)
-    
-    #       subjectBUS.update_subject(mh)
-
-    #       self.loadList()
-    #       self.clear()
-
-          
-    
-    
-    # def delete(self): 
-    #   try: 
-    #     maMH=int(self.txt_maMH.toPlainText())
-    #     subjectBUS.delete(maMH)
-    #     self.loadList()
-    #     self.clear()
-    #   except mysql.connector.IntegrityError as e:
-    #       messagebox.showinfo("", "Bạn cần xóa các buổi học và điểm danh trước")
+    def delete(self): 
+       try: 
+         maBH=int(self.txt_maBH.toPlainText())
+         lessonBUS.delete(maBH)
+         self.loadList()
+         self.clear()
+       except mysql.connector.IntegrityError as e:
+           messagebox.showinfo("", "Bạn cần xóa các buổi học và điểm danh trước")
 
 
     
-    # def timKiem(self):
-    # # Lấy từ khóa tìm kiếm từ combobox
-    #     keyword = self.cb_search.currentText()
+    def timKiem(self):
+    #  Lấy từ khóa tìm kiếm từ combobox
+         keyword = self.cb_timkiem.currentText()
     
-    # # Xác định cột để tìm kiếm dựa trên lựa chọn của người dùng
-    #     if keyword == "Tên môn học":
-    #         column_index = 1  # Cột thứ 2: Tên môn học
-    #     elif keyword == "Giảng viên":
-    #         column_index = 2  # Cột thứ 3: Tên giảng viên
+    #  Xác định cột để tìm kiếm dựa trên lựa chọn của người dùng
+         if keyword == "Tên môn học":
+             column_index = 5  # Cột thứ 2: Tên môn học
+         elif keyword == "Giảng viên":
+             column_index = 6  # Cột thứ 3: Tên giảng viên
         
 
-    #     search_text = self.txt_search.toPlainText().lower()
+         search_text = self.txt_timkiem.toPlainText().lower()
 
-    #     for row in range(self.table_mh.rowCount()):
-    #       item = self.table_mh.item(row, column_index)
-    #       if item is not None:
-    #         cell_text = item.text().lower()
-    #         if search_text in cell_text:
-    #             self.table_mh.setRowHidden(row, False)  # Hiện hàng nếu tìm thấy
-    #         else:
-    #             self.table_mh.setRowHidden(row, True)  
+         for row in range(self.table_bh.rowCount()):
+           item = self.table_bh.item(row, column_index)
+           if item is not None:
+             cell_text = item.text().lower()
+             if search_text in cell_text:
+                 self.table_bh.setRowHidden(row, False)  # Hiện hàng nếu tìm thấy
+             else:
+                 self.table_bh.setRowHidden(row, True)  
 
         
             

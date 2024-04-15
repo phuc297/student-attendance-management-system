@@ -84,3 +84,25 @@ class subjectDAL:
         finally:
             cursor.close()
             db.close()
+
+    def getIDMH(tenMH):
+        try:
+            conn = DatabaseConnector()
+            db = conn.connect()
+            cursor = db.cursor()
+            sql = "SELECT maMH FROM monhoc WHERE tenMH = %s"
+            cursor.execute(sql, (tenMH,))
+            maMH = cursor.fetchone()  # Lấy một dòng dữ liệu
+            if maMH:
+                return maMH[0]  # Trả về mã môn học (phần tử đầu tiên trong tuple)
+            else:
+                return None  # Trả về None nếu không tìm thấy mã môn học
+        except Exception as e:
+            print('lỗi kết nối:', e)
+            db.rollback()
+            return None
+        finally:
+            cursor.close()
+            db.close()
+
+                                        

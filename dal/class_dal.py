@@ -21,3 +21,24 @@ class classDAL:
         except:
             pass
         return list
+    
+    def getIDLop(tenLop):
+        try:
+            conn= DatabaseConnector()
+            db= conn.connect()
+            cursor =db.cursor()
+            sql="SELECT maLop FROM lop WHERE tenLop =%s"
+            cursor.execute(sql,(tenLop,))
+            maLop=cursor.fetchone()
+            if maLop:
+                return maLop[0]
+            else:
+                return None
+        except Exception as e:
+            print("lỗi kết nối: ",e)
+            return False
+        finally:
+            cursor.close()
+            db.close()
+
+
