@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file 'quanlygv.ui'
+# Form implementation generated from reading ui file '.\quanlygv.ui'
 #
 # Created by: PyQt6 UI code generator 6.6.1
 #
@@ -185,6 +185,7 @@ class Ui_Teacher(object):
         self.horizontalLayout.addWidget(self.btn_xemtatca)
         self.tableteacher = QtWidgets.QTableWidget(parent=self.frame_2)
         self.tableteacher.setGeometry(QtCore.QRect(5, 71, 831, 451))
+        self.tableteacher.setSelectionBehavior(QtWidgets.QAbstractItemView.SelectionBehavior.SelectRows)
         self.tableteacher.setObjectName("tableteacher")
         self.tableteacher.setColumnCount(3)
         self.tableteacher.setRowCount(0)

@@ -1,4 +1,4 @@
-from ui.ui_lesson import *
+from ui.ui_session import *
 from dal.lesson_dal import *
 from bus.lesson_bus import *
 from bus.class_bus import *
@@ -12,7 +12,7 @@ from tkinter import messagebox
 
 
 
-class LessonWidget(Ui_Lesson):
+class LessonWidget(Ui_Session):
 
     def __init__(self, page):
         self.setupUi(page)

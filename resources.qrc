@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="assets">
+    <file>assets/icons/books.png</file>
     <file>assets/icons/dictionary.png</file>
     <file>assets/icons/exam.png</file>
     <file>assets/icons/homeschooling.png</file>

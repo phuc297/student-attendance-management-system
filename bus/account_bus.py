@@ -5,3 +5,5 @@ class AccountBUS:
           return AccountDAL.getList()
      def add(account):
           return AccountDAL.add(account)
+     def delete(matk):
+          return AccountDAL.delete(matk)

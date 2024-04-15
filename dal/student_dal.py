@@ -22,3 +22,57 @@ class StudentDAL:
         except:
             pass
         return list
+    
+    def add(student: Student):
+        try: 
+            conn= DatabaseConnector()
+            db= conn.connect()
+            cursor = db.cursor()
+            sql="""insert into sinhvien(hoTen, maLop, cmnd, gioiTinh, ngaySinh, email, SDT) value (%s, %s, %s, %s, %s, %s, %s)"""
+            cursor.execute(sql,(student.hoten, student.malop, student.cmnd, student.gioitinh, student.ngaysinh, student.email, student.sdt))
+            db.commit()
+           
+            return True
+        except Exception as e:
+            print('Student DAL: ',e)
+            db.rollback()
+            return False
+        finally:
+            cursor.close()
+            db.close()
+
+    def delete(masv):
+        try: 
+            conn= DatabaseConnector()
+            db= conn.connect()
+            cursor = db.cursor()
+            sql="""delete from sinhvien where maSV = %s"""
+            cursor.execute(sql,(masv,))
+            db.commit()
+           
+            return True
+        except Exception as e:
+            print('Student DAL: ',e)
+            db.rollback()
+            return False
+        finally:
+            cursor.close()
+            db.close()
+
+    def update(student: Student):
+        try: 
+            conn= DatabaseConnector()
+            db= conn.connect()
+            cursor = db.cursor()
+            sql = """UPDATE sinhvien SET hoTen = %s, maLop = %s, cmnd = %s, gioiTinh = %s, ngaySinh = %s, email = %s, SDT = %s WHERE maSV=%s"""
+            cursor.execute(sql,(student.hoten, student.malop, student.cmnd, student.gioitinh, student.ngaysinh, student.email, student.sdt, student.masv))
+            db.commit()
+           
+            return True
+        except Exception as e:
+            print('Student DAL: ',e)
+            db.rollback()
+            return False
+        finally:
+            cursor.close()
+            db.close()

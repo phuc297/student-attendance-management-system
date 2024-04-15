@@ -38,7 +38,7 @@ class TeacherWidget(Ui_Teacher):
         hoTen = self.txt_hoten.toPlainText()
         SDT = self.txt_sdt.toPlainText()
         giangvien = Teacher(None,hoTen,SDT)
-        TeacherBUS.addlist(giangvien)
+        TeacherBUS.add(giangvien)
         self.loadList()
 
     def deletegiangvien(self):
@@ -48,13 +48,13 @@ class TeacherWidget(Ui_Teacher):
         self.cleartxt()
 
     def updategiangvien(self):
-         maGV=self.txt_id.toPlainText()
-         hoTen = self.txt_hoten.toPlainText()
-         SDT = self.txt_sdt.toPlainText()
-         giangvien = Teacher(maGV,hoTen,SDT)
-         TeacherBUS.update(giangvien)
-         self.loadList()
-         self.cleartxt()
+        maGV=self.txt_id.toPlainText()
+        hoTen = self.txt_hoten.toPlainText()
+        SDT = self.txt_sdt.toPlainText()
+        giangvien = Teacher(maGV,hoTen,SDT)
+        TeacherBUS.update(giangvien)
+        self.loadList()
+        self.cleartxt()
 
     def locId(self, data):
          list_teacher = []
