@@ -1,9 +1,5 @@
-<<<<<<< HEAD:session_widget.py
-from ui.ui_session import *
-=======
 import datetime
-from ui.ui_lesson import *
->>>>>>> 5c754b8c457cd64151a4da85cb3e939a7412a93f:lesson_widget.py
+from ui.ui_session import *
 from dal.lesson_dal import *
 from bus.lesson_bus import *
 from bus.class_bus import *
@@ -14,7 +10,7 @@ from dto.subject import *
 from dto.teacher import *
 import tkinter as tk
 from tkinter import messagebox
-from ui.ui_lesson import *
+
 
 
 

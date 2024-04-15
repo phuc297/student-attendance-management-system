@@ -35,20 +35,11 @@ class TeacherWidget(Ui_Teacher):
         self.txt_hoten.setText(self.tableteacher.item(cr, 1).text())
         self.txt_sdt.setText(self.tableteacher.item(cr, 2).text())
 
-<<<<<<< HEAD
-    def addgiangvien(self):
-        hoTen = self.txt_hoten.toPlainText()
-        SDT = self.txt_sdt.toPlainText()
-        giangvien = Teacher(None,hoTen,SDT)
-        TeacherBUS.add(giangvien)
-        self.loadList()
-=======
     def addgiangvien(self,page):
         if (self.txt_id.toPlainText()==""):
         
             hoTen = self.txt_hoten.toPlainText()
             SDT = self.txt_sdt.toPlainText()
->>>>>>> 5c754b8c457cd64151a4da85cb3e939a7412a93f
 
             # Kiểm tra xem các trường dữ liệu có bị thiếu không
             if not hoTen.strip() or not SDT.strip():
@@ -73,16 +64,6 @@ class TeacherWidget(Ui_Teacher):
         self.loadList()
         self.cleartxt()
 
-<<<<<<< HEAD
-    def updategiangvien(self):
-        maGV=self.txt_id.toPlainText()
-        hoTen = self.txt_hoten.toPlainText()
-        SDT = self.txt_sdt.toPlainText()
-        giangvien = Teacher(maGV,hoTen,SDT)
-        TeacherBUS.update(giangvien)
-        self.loadList()
-        self.cleartxt()
-=======
     def updategiangvien(self,page):
          maGV=self.txt_id.toPlainText()
          hoTen = self.txt_hoten.toPlainText()
@@ -96,7 +77,6 @@ class TeacherWidget(Ui_Teacher):
          TeacherBUS.update(giangvien)
          self.loadList()
          self.cleartxt()
->>>>>>> 5c754b8c457cd64151a4da85cb3e939a7412a93f
 
     def timkiem(self):
         keyword = self.comboBoxtimkiem.currentText()
