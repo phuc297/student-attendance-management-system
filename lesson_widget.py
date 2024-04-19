@@ -215,11 +215,6 @@ class LessonWidget(Ui_Lesson):
              else:
                  self.table_bh.setRowHidden(row, True)  
 
-        
-            
-        
-
-
 
     def update(self):
         pass
