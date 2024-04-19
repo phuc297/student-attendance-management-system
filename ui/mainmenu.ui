@@ -190,37 +190,11 @@ background-color: #5442b1;
        </size>
       </property>
      </widget>
-     <widget class="QPushButton" name="btnClass">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>440</y>
-        <width>160</width>
-        <height>60</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true"/>
-      </property>
-      <property name="text">
-       <string>Lớp học</string>
-      </property>
-      <property name="icon">
-       <iconset resource="../resources.qrc">
-        <normaloff>:/assets/assets/icons/dictionary.png</normaloff>:/assets/assets/icons/dictionary.png</iconset>
-      </property>
-      <property name="iconSize">
-       <size>
-        <width>32</width>
-        <height>32</height>
-       </size>
-      </property>
-     </widget>
      <widget class="QPushButton" name="btnSesson">
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>500</y>
+        <y>440</y>
         <width>160</width>
         <height>60</height>
        </rect>
@@ -246,7 +220,7 @@ background-color: #5442b1;
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>560</y>
+        <y>500</y>
         <width>160</width>
         <height>60</height>
        </rect>
@@ -275,7 +249,7 @@ background-color: #5442b1;
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>620</y>
+        <y>550</y>
         <width>160</width>
         <height>60</height>
        </rect>
@@ -313,7 +287,7 @@ background-color: #5442b1;
        <string notr="true"/>
       </property>
       <property name="text">
-       <string>Hello</string>
+       <string>HHHHHHHHHHHHHH</string>
       </property>
       <property name="textFormat">
        <enum>Qt::MarkdownText</enum>

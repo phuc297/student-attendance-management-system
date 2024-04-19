@@ -26,7 +26,6 @@ class MenuForm(Ui_MainMenu):
         self.btnStudent.clicked.connect(lambda: self.buttonClick(self.btnStudent))
         self.btnTeacher.clicked.connect(lambda: self.buttonClick(self.btnTeacher))
         self.btnSubject.clicked.connect(lambda: self.buttonClick(self.btnSubject))
-        self.btnClass.clicked.connect(lambda: self.buttonClick(self.btnClass))
         self.btnSesson.clicked.connect(lambda: self.buttonClick(self.btnSesson))
         self.btnStat.clicked.connect(lambda: self.buttonClick(self.btnStat))
         self.btnAccount.clicked.connect(lambda: self.buttonClick(self.btnAccount))
@@ -38,7 +37,6 @@ class MenuForm(Ui_MainMenu):
         self.pageStudent = QtWidgets.QWidget()
         self.pageTeacher = QtWidgets.QWidget()
         self.pageSubject = QtWidgets.QWidget()
-        self.pageClass = QtWidgets.QWidget()
         self.pageSession = QtWidgets.QWidget()
         self.pageStats = QtWidgets.QWidget()
         self.pageAccount = QtWidgets.QWidget()
@@ -48,7 +46,6 @@ class MenuForm(Ui_MainMenu):
         self.stackedWidget.addWidget(self.pageStudent)
         self.stackedWidget.addWidget(self.pageTeacher)
         self.stackedWidget.addWidget(self.pageSubject)
-        self.stackedWidget.addWidget(self.pageClass)
         self.stackedWidget.addWidget(self.pageSession)
         self.stackedWidget.addWidget(self.pageStats)
         self.stackedWidget.addWidget(self.pageAccount)
@@ -65,7 +62,6 @@ class MenuForm(Ui_MainMenu):
 
         subject_page = SubjectWidget(self.pageSubject)
 
-        class_page = ClassWidget(self.pageClass)
 
         account_page = AccountWidget(self.pageAccount)
 
@@ -102,10 +98,7 @@ class MenuForm(Ui_MainMenu):
             UIFunctions.resetStyle(self, btn)
             self.btnSubject.setStyleSheet(UIFunctions.selectMenu())
 
-        if btnName == "btnClass":
-            self.stackedWidget.setCurrentWidget(self.pageClass)
-            UIFunctions.resetStyle(self, btn)
-            self.btnClass.setStyleSheet(UIFunctions.selectMenu())
+        
 
         if btnName == "btnSesson":
             self.stackedWidget.setCurrentWidget(self.pageSession)
