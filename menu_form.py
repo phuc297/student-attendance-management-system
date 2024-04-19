@@ -7,11 +7,12 @@ import os
 from account_widget import AccountWidget
 from attendence_widget import AttendenceWidget
 from home_widget import HomeWidget
-from lesson_widget import LessonWidget
+from session_widget import LessonWidget
 from ui import *
 from student_widget import *
 from teacher_widget import *
 from subject_widget import *
+from class_widget import *
 
 
 class MenuForm(Ui_MainMenu):
@@ -24,6 +25,7 @@ class MenuForm(Ui_MainMenu):
         self.btnAttendence.clicked.connect(lambda: self.buttonClick(self.btnAttendence))
         self.btnStudent.clicked.connect(lambda: self.buttonClick(self.btnStudent))
         self.btnTeacher.clicked.connect(lambda: self.buttonClick(self.btnTeacher))
+        self.btnSubject.clicked.connect(lambda: self.buttonClick(self.btnSubject))
         self.btnClass.clicked.connect(lambda: self.buttonClick(self.btnClass))
         self.btnSesson.clicked.connect(lambda: self.buttonClick(self.btnSesson))
         self.btnStat.clicked.connect(lambda: self.buttonClick(self.btnStat))
@@ -35,6 +37,7 @@ class MenuForm(Ui_MainMenu):
         self.pageAttendance = QtWidgets.QWidget()
         self.pageStudent = QtWidgets.QWidget()
         self.pageTeacher = QtWidgets.QWidget()
+        self.pageSubject = QtWidgets.QWidget()
         self.pageClass = QtWidgets.QWidget()
         self.pageSession = QtWidgets.QWidget()
         self.pageStats = QtWidgets.QWidget()
@@ -44,6 +47,7 @@ class MenuForm(Ui_MainMenu):
         self.stackedWidget.addWidget(self.pageAttendance)
         self.stackedWidget.addWidget(self.pageStudent)
         self.stackedWidget.addWidget(self.pageTeacher)
+        self.stackedWidget.addWidget(self.pageSubject)
         self.stackedWidget.addWidget(self.pageClass)
         self.stackedWidget.addWidget(self.pageSession)
         self.stackedWidget.addWidget(self.pageStats)
@@ -59,7 +63,9 @@ class MenuForm(Ui_MainMenu):
 
         teacher_page = TeacherWidget(self.pageTeacher)
 
-        subject_page = SubjectWidget(self.pageClass)
+        subject_page = SubjectWidget(self.pageSubject)
+
+        class_page = ClassWidget(self.pageClass)
 
         account_page = AccountWidget(self.pageAccount)
 
@@ -90,6 +96,11 @@ class MenuForm(Ui_MainMenu):
             self.stackedWidget.setCurrentWidget(self.pageTeacher)
             UIFunctions.resetStyle(self, btn)
             self.btnTeacher.setStyleSheet(UIFunctions.selectMenu())
+        
+        if btnName == "btnSubject":
+            self.stackedWidget.setCurrentWidget(self.pageSubject)
+            UIFunctions.resetStyle(self, btn)
+            self.btnSubject.setStyleSheet(UIFunctions.selectMenu())
 
         if btnName == "btnClass":
             self.stackedWidget.setCurrentWidget(self.pageClass)

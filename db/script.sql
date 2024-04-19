@@ -1,3 +1,1 @@
--- use diemdanhsv
-
-select * from sinhvien
+insert into sinhvien(maSV, hoTen, maLop, cmnd, gioiTinh, ngaySinh, email, SDT) value ('Nguyễn Thị Sinh Viên', 1, 123456789, 1, '2000-01-01', 'sv1@example.com', '0123456789')

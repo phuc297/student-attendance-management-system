@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Form</class>
- <widget class="QWidget" name="Form">
+ <class>Session</class>
+ <widget class="QWidget" name="Session">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -390,6 +390,9 @@ padding: 15px 5px;
        <width>821</width>
        <height>521</height>
       </rect>
+     </property>
+     <property name="selectionBehavior">
+      <enum>QAbstractItemView::SelectRows</enum>
      </property>
      <column>
       <property name="text">

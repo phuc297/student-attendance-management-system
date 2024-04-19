@@ -445,6 +445,9 @@ QPushButton{
        <height>451</height>
       </rect>
      </property>
+     <property name="selectionBehavior">
+      <enum>QAbstractItemView::SelectRows</enum>
+     </property>
      <column>
       <property name="text">
        <string>ID</string>

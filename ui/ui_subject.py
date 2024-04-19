@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file 'class.ui'
+# Form implementation generated from reading ui file '.\subject.ui'
 #
 # Created by: PyQt6 UI code generator 6.6.1
 #
@@ -10,11 +10,11 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 
 
 class Ui_Subject(object):
-    def setupUi(self, Class):
-        Class.setObjectName("Class")
-        Class.resize(1431, 800)
-        Class.setMaximumSize(QtCore.QSize(1445, 810))
-        self.bg = QtWidgets.QFrame(parent=Class)
+    def setupUi(self, Subject):
+        Subject.setObjectName("Subject")
+        Subject.resize(1431, 800)
+        Subject.setMaximumSize(QtCore.QSize(1445, 810))
+        self.bg = QtWidgets.QFrame(parent=Subject)
         self.bg.setGeometry(QtCore.QRect(10, 10, 1400, 800))
         self.bg.setMaximumSize(QtCore.QSize(1445, 800))
         self.bg.setStyleSheet("QPushButton{\n"
@@ -66,7 +66,6 @@ class Ui_Subject(object):
         self.txt_maMH = QtWidgets.QTextEdit(parent=self.ttmh)
         self.txt_maMH.setGeometry(QtCore.QRect(170, 80, 191, 31))
         self.txt_maMH.setObjectName("txt_maMH")
-        self.txt_maMH.setReadOnly(True)
         self.txt_tenMH = QtWidgets.QTextEdit(parent=self.ttmh)
         self.txt_tenMH.setGeometry(QtCore.QRect(170, 130, 191, 31))
         self.txt_tenMH.setObjectName("txt_tenMH")
@@ -88,6 +87,7 @@ class Ui_Subject(object):
         self.table_mh.setFrameShape(QtWidgets.QFrame.Shape.Box)
         self.table_mh.setFrameShadow(QtWidgets.QFrame.Shadow.Plain)
         self.table_mh.setLineWidth(1)
+        self.table_mh.setSelectionBehavior(QtWidgets.QAbstractItemView.SelectionBehavior.SelectRows)
         self.table_mh.setGridStyle(QtCore.Qt.PenStyle.NoPen)
         self.table_mh.setObjectName("table_mh")
         self.table_mh.setColumnCount(3)
@@ -134,44 +134,44 @@ class Ui_Subject(object):
         self.cb_gv.setGeometry(QtCore.QRect(168, 181, 191, 31))
         self.cb_gv.setObjectName("cb_gv")
 
-        self.retranslateUi(Class)
-        QtCore.QMetaObject.connectSlotsByName(Class)
+        self.retranslateUi(Subject)
+        QtCore.QMetaObject.connectSlotsByName(Subject)
 
-    def retranslateUi(self, Class):
+    def retranslateUi(self, Subject):
         _translate = QtCore.QCoreApplication.translate
-        Class.setWindowTitle(_translate("Class", "Form"))
-        self.lb_main.setText(_translate("Class", "<html><head/><body><p align=\"center\">QUẢN LÝ THÔNG TIN MÔN HỌC</p></body></html>"))
-        self.label.setText(_translate("Class", "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; font-weight:600; color:#ffaa00;\">Thông tin môn học</span></p></body></html>"))
-        self.label_2.setText(_translate("Class", "<html><head/><body><p align=\"center\"><span style=\" font-size:10pt; font-weight:600;\">Mã môn học</span></p></body></html>"))
-        self.label_3.setText(_translate("Class", "<html><head/><body><p align=\"center\"><span style=\" font-size:10pt; font-weight:600;\">Tên môn học</span></p></body></html>"))
-        self.label_5.setText(_translate("Class", "<html><head/><body><p align=\"center\"><span style=\" font-size:10pt; font-weight:600;\">Tìm kiếm theo:</span></p></body></html>"))
-        self.btn_search.setText(_translate("Class", "Tìm kiếm"))
+        Subject.setWindowTitle(_translate("Subject", "Form"))
+        self.lb_main.setText(_translate("Subject", "<html><head/><body><p align=\"center\">QUẢN LÝ THÔNG TIN MÔN HỌC</p></body></html>"))
+        self.label.setText(_translate("Subject", "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; font-weight:600; color:#ffaa00;\">Thông tin môn học</span></p></body></html>"))
+        self.label_2.setText(_translate("Subject", "<html><head/><body><p align=\"center\"><span style=\" font-size:10pt; font-weight:600;\">Mã môn học</span></p></body></html>"))
+        self.label_3.setText(_translate("Subject", "<html><head/><body><p align=\"center\"><span style=\" font-size:10pt; font-weight:600;\">Tên môn học</span></p></body></html>"))
+        self.label_5.setText(_translate("Subject", "<html><head/><body><p align=\"center\"><span style=\" font-size:10pt; font-weight:600;\">Tìm kiếm theo:</span></p></body></html>"))
+        self.btn_search.setText(_translate("Subject", "Tìm kiếm"))
         item = self.table_mh.verticalHeaderItem(0)
-        item.setText(_translate("Class", "1"))
+        item.setText(_translate("Subject", "1"))
         item = self.table_mh.verticalHeaderItem(1)
-        item.setText(_translate("Class", "2"))
+        item.setText(_translate("Subject", "2"))
         item = self.table_mh.verticalHeaderItem(2)
-        item.setText(_translate("Class", "3"))
+        item.setText(_translate("Subject", "3"))
         item = self.table_mh.verticalHeaderItem(3)
-        item.setText(_translate("Class", "4"))
+        item.setText(_translate("Subject", "4"))
         item = self.table_mh.horizontalHeaderItem(0)
-        item.setText(_translate("Class", "Mã môn học"))
+        item.setText(_translate("Subject", "Mã môn học"))
         item = self.table_mh.horizontalHeaderItem(1)
-        item.setText(_translate("Class", "Tên môn học"))
+        item.setText(_translate("Subject", "Tên môn học"))
         item = self.table_mh.horizontalHeaderItem(2)
-        item.setText(_translate("Class", "Giảng viên"))
-        self.btn_them.setText(_translate("Class", "Thêm mới"))
-        self.btn_sua.setText(_translate("Class", "Cập nhật"))
-        self.btn_xoa.setText(_translate("Class", "Xóa"))
-        self.btn_refresh.setText(_translate("Class", "Làm mới"))
-        self.label_12.setText(_translate("Class", "<html><head/><body><p align=\"center\"><span style=\" font-size:10pt; font-weight:600;\">Giảng viên</span></p></body></html>"))
+        item.setText(_translate("Subject", "Giảng viên"))
+        self.btn_them.setText(_translate("Subject", "Thêm mới"))
+        self.btn_sua.setText(_translate("Subject", "Cập nhật"))
+        self.btn_xoa.setText(_translate("Subject", "Xóa"))
+        self.btn_refresh.setText(_translate("Subject", "Làm mới"))
+        self.label_12.setText(_translate("Subject", "<html><head/><body><p align=\"center\"><span style=\" font-size:10pt; font-weight:600;\">Giảng viên</span></p></body></html>"))
 
 
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
-    Class = QtWidgets.QWidget()
+    Subject = QtWidgets.QWidget()
     ui = Ui_Subject()
-    ui.setupUi(Class)
-    Class.show()
+    ui.setupUi(Subject)
+    Subject.show()
     sys.exit(app.exec())

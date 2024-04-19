@@ -1,5 +1,5 @@
 import datetime
-from ui.ui_lesson import *
+from ui.ui_session import *
 from dal.lesson_dal import *
 from bus.lesson_bus import *
 from bus.class_bus import *
@@ -10,11 +10,11 @@ from dto.subject import *
 from dto.teacher import *
 import tkinter as tk
 from tkinter import messagebox
-from ui.ui_lesson import *
 
 
 
-class LessonWidget(Ui_Lesson):
+
+class LessonWidget(Ui_Session):
 
     def __init__(self, page):
         self.setupUi(page)

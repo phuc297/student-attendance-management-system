@@ -21,7 +21,7 @@ class TeacherDAL:
         except:
             pass
         return list
-    def addlist (giangvien):
+    def add(giangvien):
        
         try: 
             conn= DatabaseConnector()

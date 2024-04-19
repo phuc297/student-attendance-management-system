@@ -20,4 +20,4 @@ from . ui_attendence import *
 
 from . ui_teacher import *
 
-from .ui_lesson import *
+from . ui_session import *

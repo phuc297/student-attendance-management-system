@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file 'lession.ui'
+# Form implementation generated from reading ui file '.\session.ui'
 #
 # Created by: PyQt6 UI code generator 6.6.1
 #
@@ -9,12 +9,12 @@
 from PyQt6 import QtCore, QtGui, QtWidgets
 
 
-class Ui_Lesson(object):
-    def setupUi(self, Form):
-        Form.setObjectName("Form")
-        Form.resize(1440, 800)
-        Form.setMaximumSize(QtCore.QSize(1440, 800))
-        self.frame = QtWidgets.QFrame(parent=Form)
+class Ui_Session(object):
+    def setupUi(self, Session):
+        Session.setObjectName("Session")
+        Session.resize(1440, 800)
+        Session.setMaximumSize(QtCore.QSize(1440, 800))
+        self.frame = QtWidgets.QFrame(parent=Session)
         self.frame.setGeometry(QtCore.QRect(30, 30, 1371, 721))
         self.frame.setStyleSheet("#frame{\n"
 "    background-color: rgb(231, 231, 231);\n"
@@ -133,6 +133,7 @@ class Ui_Lesson(object):
         self.btn_timkiem.setObjectName("btn_timkiem")
         self.table_bh = QtWidgets.QTableWidget(parent=self.frame1)
         self.table_bh.setGeometry(QtCore.QRect(10, 70, 821, 521))
+        self.table_bh.setSelectionBehavior(QtWidgets.QAbstractItemView.SelectionBehavior.SelectRows)
         self.table_bh.setObjectName("table_bh")
         self.table_bh.setColumnCount(7)
         self.table_bh.setRowCount(0)
@@ -154,50 +155,50 @@ class Ui_Lesson(object):
         self.chonNgayHoc.setGeometry(QtCore.QRect(670, 30, 161, 31))
         self.chonNgayHoc.setObjectName("chonNgayHoc")
 
-        self.retranslateUi(Form)
-        QtCore.QMetaObject.connectSlotsByName(Form)
+        self.retranslateUi(Session)
+        QtCore.QMetaObject.connectSlotsByName(Session)
 
-    def retranslateUi(self, Form):
+    def retranslateUi(self, Session):
         _translate = QtCore.QCoreApplication.translate
-        Form.setWindowTitle(_translate("Form", "Form"))
-        self.label_title.setText(_translate("Form", "<html><head/><body><p align=\"center\"><span style=\" font-size:16pt; font-weight:600;\">QUẢN LÝ THÔNG TIN BUỔI HỌC</span></p></body></html>"))
-        self.label.setText(_translate("Form", "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; font-weight:600;\">Thông tin buổi học</span></p></body></html>"))
-        self.label_2.setText(_translate("Form", "<html><head/><body><p align=\"center\"><span style=\" font-size:10pt; font-weight:600;\">Mã buổi học</span></p></body></html>"))
-        self.label_3.setText(_translate("Form", "<html><head/><body><p align=\"center\"><span style=\" font-size:10pt; font-weight:600;\">Giờ bắt đầu</span></p></body></html>"))
-        self.label_4.setText(_translate("Form", "<html><head/><body><p align=\"center\"><span style=\" font-size:10pt; font-weight:600;\"> Giờ kết thúc</span></p></body></html>"))
-        self.label_5.setText(_translate("Form", "<html><head/><body><p align=\"center\"><span style=\" font-size:10pt; font-weight:600;\">Ngày</span></p></body></html>"))
-        self.label_7.setText(_translate("Form", "<html><head/><body><p align=\"center\"><span style=\" font-size:10pt; font-weight:600;\">Tên giảng viên</span></p></body></html>"))
-        self.label_9.setText(_translate("Form", "<html><head/><body><p align=\"center\"><span style=\" font-size:10pt; font-weight:600;\">Tên môn học</span></p></body></html>"))
-        self.btn_them.setText(_translate("Form", "Thêm mới"))
-        self.btn_sua.setText(_translate("Form", "Cập nhật"))
-        self.btn_xoa.setText(_translate("Form", "Xóa"))
-        self.btn_lammoi.setText(_translate("Form", "Làm mới"))
-        self.label_6.setText(_translate("Form", "<html><head/><body><p align=\"center\"><span style=\" font-size:10pt; font-weight:600;\">Lớp</span></p></body></html>"))
-        self.label_10.setText(_translate("Form", "<html><head/><body><p align=\"center\"><span style=\" font-size:10pt; font-weight:600;\">Tìm kiếm theo:</span></p></body></html>"))
-        self.cb_timkiem.setItemText(0, _translate("Form", "Tên môn học"))
-        self.cb_timkiem.setItemText(1, _translate("Form", "Giảng viên"))
-        self.btn_timkiem.setText(_translate("Form", "Tìm kiếm"))
+        Session.setWindowTitle(_translate("Session", "Form"))
+        self.label_title.setText(_translate("Session", "<html><head/><body><p align=\"center\"><span style=\" font-size:16pt; font-weight:600;\">QUẢN LÝ THÔNG TIN BUỔI HỌC</span></p></body></html>"))
+        self.label.setText(_translate("Session", "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; font-weight:600;\">Thông tin buổi học</span></p></body></html>"))
+        self.label_2.setText(_translate("Session", "<html><head/><body><p align=\"center\"><span style=\" font-size:10pt; font-weight:600;\">Mã buổi học</span></p></body></html>"))
+        self.label_3.setText(_translate("Session", "<html><head/><body><p align=\"center\"><span style=\" font-size:10pt; font-weight:600;\">Giờ bắt đầu</span></p></body></html>"))
+        self.label_4.setText(_translate("Session", "<html><head/><body><p align=\"center\"><span style=\" font-size:10pt; font-weight:600;\"> Giờ kết thúc</span></p></body></html>"))
+        self.label_5.setText(_translate("Session", "<html><head/><body><p align=\"center\"><span style=\" font-size:10pt; font-weight:600;\">Ngày</span></p></body></html>"))
+        self.label_7.setText(_translate("Session", "<html><head/><body><p align=\"center\"><span style=\" font-size:10pt; font-weight:600;\">Tên giảng viên</span></p></body></html>"))
+        self.label_9.setText(_translate("Session", "<html><head/><body><p align=\"center\"><span style=\" font-size:10pt; font-weight:600;\">Tên môn học</span></p></body></html>"))
+        self.btn_them.setText(_translate("Session", "Thêm mới"))
+        self.btn_sua.setText(_translate("Session", "Cập nhật"))
+        self.btn_xoa.setText(_translate("Session", "Xóa"))
+        self.btn_lammoi.setText(_translate("Session", "Làm mới"))
+        self.label_6.setText(_translate("Session", "<html><head/><body><p align=\"center\"><span style=\" font-size:10pt; font-weight:600;\">Lớp</span></p></body></html>"))
+        self.label_10.setText(_translate("Session", "<html><head/><body><p align=\"center\"><span style=\" font-size:10pt; font-weight:600;\">Tìm kiếm theo:</span></p></body></html>"))
+        self.cb_timkiem.setItemText(0, _translate("Session", "Tên môn học"))
+        self.cb_timkiem.setItemText(1, _translate("Session", "Giảng viên"))
+        self.btn_timkiem.setText(_translate("Session", "Tìm kiếm"))
         item = self.table_bh.horizontalHeaderItem(0)
-        item.setText(_translate("Form", "Mã buổi học"))
+        item.setText(_translate("Session", "Mã buổi học"))
         item = self.table_bh.horizontalHeaderItem(1)
-        item.setText(_translate("Form", "Giờ bắt đầu"))
+        item.setText(_translate("Session", "Giờ bắt đầu"))
         item = self.table_bh.horizontalHeaderItem(2)
-        item.setText(_translate("Form", "Giờ kết thúc"))
+        item.setText(_translate("Session", "Giờ kết thúc"))
         item = self.table_bh.horizontalHeaderItem(3)
-        item.setText(_translate("Form", "Ngày"))
+        item.setText(_translate("Session", "Ngày"))
         item = self.table_bh.horizontalHeaderItem(4)
-        item.setText(_translate("Form", "Lớp"))
+        item.setText(_translate("Session", "Lớp"))
         item = self.table_bh.horizontalHeaderItem(5)
-        item.setText(_translate("Form", "Tên môn học"))
+        item.setText(_translate("Session", "Tên môn học"))
         item = self.table_bh.horizontalHeaderItem(6)
-        item.setText(_translate("Form", "Giảng viên"))
+        item.setText(_translate("Session", "Giảng viên"))
 
 
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
-    Form = QtWidgets.QWidget()
-    ui = Ui_Lesson()
-    ui.setupUi(Form)
-    Form.show()
+    Session = QtWidgets.QWidget()
+    ui = Ui_Session()
+    ui.setupUi(Session)
+    Session.show()
     sys.exit(app.exec())
