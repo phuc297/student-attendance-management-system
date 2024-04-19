@@ -106,7 +106,7 @@
       <item>
        <widget class="QLabel" name="label">
         <property name="text">
-         <string>chọn môn/Id buối học</string>
+         <string>Môn học</string>
         </property>
        </widget>
       </item>
@@ -118,14 +118,39 @@
        </widget>
       </item>
       <item>
-       <widget class="QLabel" name="label_2">
+       <widget class="QLabel" name="label_7">
         <property name="text">
-         <string>chọn loại điểm danh</string>
+         <string>Buổi học</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QComboBox" name="comboBox"/>
+       <widget class="QComboBox" name="comboBox_6">
+        <property name="currentText">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_2">
+        <property name="text">
+         <string>Loại điểm danh</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="comboBox">
+        <item>
+         <property name="text">
+          <string>Vào</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Ra</string>
+         </property>
+        </item>
+       </widget>
       </item>
      </layout>
     </widget>
@@ -152,7 +177,7 @@
       </rect>
      </property>
      <property name="text">
-      <string>Thông báo kiểm thử combobox</string>
+      <string>Thông báo:</string>
      </property>
     </widget>
    </widget>
@@ -229,19 +254,23 @@
        <x>70</x>
        <y>170</y>
        <width>381</width>
-       <height>151</height>
+       <height>131</height>
       </rect>
      </property>
      <layout class="QGridLayout" name="gridLayout">
+      <item row="2" column="0">
+       <widget class="QLabel" name="label_6">
+        <property name="text">
+         <string>thời gian</string>
+        </property>
+       </widget>
+      </item>
       <item row="0" column="0">
        <widget class="QLabel" name="label_4">
         <property name="text">
          <string>ID sinh viên</string>
         </property>
        </widget>
-      </item>
-      <item row="0" column="1">
-       <widget class="QComboBox" name="comboBox_3"/>
       </item>
       <item row="1" column="0">
        <widget class="QLabel" name="label_5">
@@ -250,18 +279,14 @@
         </property>
        </widget>
       </item>
-      <item row="1" column="1">
-       <widget class="QComboBox" name="comboBox_4"/>
-      </item>
-      <item row="2" column="0">
-       <widget class="QLabel" name="label_6">
-        <property name="text">
-         <string>thời gian</string>
-        </property>
-       </widget>
+      <item row="0" column="1">
+       <widget class="QTextEdit" name="textEdit"/>
       </item>
       <item row="2" column="1">
-       <widget class="QComboBox" name="comboBox_5"/>
+       <widget class="QTextEdit" name="textEdit_3"/>
+      </item>
+      <item row="1" column="1">
+       <widget class="QTextEdit" name="textEdit_2"/>
       </item>
      </layout>
     </widget>
@@ -314,13 +339,23 @@
     <widget class="QWidget" name="verticalLayoutWidget_2">
      <property name="geometry">
       <rect>
-       <x>260</x>
+       <x>189</x>
        <y>30</y>
-       <width>160</width>
+       <width>231</width>
        <height>131</height>
       </rect>
      </property>
-     <layout class="QVBoxLayout" name="verticalLayout_2"/>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <widget class="QTextEdit" name="textEdit_5"/>
+      </item>
+      <item>
+       <widget class="QTextEdit" name="textEdit_6"/>
+      </item>
+      <item>
+       <widget class="QTextEdit" name="textEdit_4"/>
+      </item>
+     </layout>
     </widget>
    </widget>
   </widget>
