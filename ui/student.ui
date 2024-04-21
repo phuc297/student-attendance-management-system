@@ -560,7 +560,7 @@ p, li { white-space: pre-wrap; }
          </widget>
         </item>
         <item row="0" column="1">
-         <widget class="QPushButton" name="btn_reset_2">
+         <widget class="QPushButton" name="btn_traindata">
           <property name="text">
            <string>Training Data</string>
           </property>

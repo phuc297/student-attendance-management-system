@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file '.\student.ui'
+# Form implementation generated from reading ui file 'student.ui'
 #
 # Created by: PyQt6 UI code generator 6.6.1
 #
@@ -230,9 +230,9 @@ class Ui_Student(object):
         self.btn_luu_2 = QtWidgets.QPushButton(parent=self.layoutWidget_2)
         self.btn_luu_2.setObjectName("btn_luu_2")
         self.gridLayout_2.addWidget(self.btn_luu_2, 0, 0, 1, 1)
-        self.btn_reset_2 = QtWidgets.QPushButton(parent=self.layoutWidget_2)
-        self.btn_reset_2.setObjectName("btn_reset_2")
-        self.gridLayout_2.addWidget(self.btn_reset_2, 0, 1, 1, 1)
+        self.btn_traindata = QtWidgets.QPushButton(parent=self.layoutWidget_2)
+        self.btn_traindata.setObjectName("btn_traindata")
+        self.gridLayout_2.addWidget(self.btn_traindata, 0, 1, 1, 1)
         self.lb_thongtin = QtWidgets.QLabel(parent=self.fr_thongtin)
         self.lb_thongtin.setGeometry(QtCore.QRect(4, 10, 551, 31))
         font = QtGui.QFont()
@@ -425,7 +425,7 @@ class Ui_Student(object):
         self.btn_sua.setText(_translate("Student", "Sửa"))
         self.btn_reset.setText(_translate("Student", "Làm mới"))
         self.btn_luu_2.setText(_translate("Student", "Lấy ảnh"))
-        self.btn_reset_2.setText(_translate("Student", "Training Data"))
+        self.btn_traindata.setText(_translate("Student", "Training Data"))
         self.lb_thongtin.setText(_translate("Student", "THÔNG TIN SINH VIÊN"))
         self.txt_tklop.setPlaceholderText(_translate("Student", "Tìm kiếm"))
         self.cbx_tklophoc.setItemText(0, _translate("Student", "Mã lớp"))

@@ -1,18 +1,32 @@
 from ui.ui_student import *
 from bus.student_bus import *
+from trainning_widget import *
+from PyQt6.QtWidgets import QWidget 
+import cv2
+
 
 class StudentWidget(Ui_Student):
 
     def __init__(self, page):
+        super().__init__()
         self.setupUi(page)
         self.dataStudent = {}
+        
+        
         self.loadData()
         self.loadList()
         self.tbStudents.itemClicked.connect(lambda: self.tableEvent())
         self.btn_them.clicked.connect(self.addStudent)
         self.btn_xoa.clicked.connect(self.deleteStudent)
         self.btn_sua.clicked.connect(self.updateStudent)
+        self.btn_traindata.clicked.connect(self.openCapImageForm)
         
+
+    def openCapImageForm(self):
+        masv= self.txt_mssv.toPlainText()
+        self.cap_image_form = TrainingWidget(masv)
+        self.cap_image_form.show()
+
     def loadData(self):
         list = StudentBUS.getList()
         if list is not None:
