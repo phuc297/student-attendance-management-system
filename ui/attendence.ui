@@ -154,19 +154,6 @@
       </item>
      </layout>
     </widget>
-    <widget class="QWidget" name="widget" native="true">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>90</y>
-       <width>671</width>
-       <height>331</height>
-      </rect>
-     </property>
-     <property name="autoFillBackground">
-      <bool>true</bool>
-     </property>
-    </widget>
     <widget class="QLabel" name="label_3">
      <property name="geometry">
       <rect>
@@ -180,6 +167,19 @@
       <string>Thông báo:</string>
      </property>
     </widget>
+    <widget class="QLabel" name="lbCamera">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>90</y>
+       <width>671</width>
+       <height>351</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
    </widget>
    <widget class="QWidget" name="widget_2" native="true">
     <property name="geometry">
@@ -190,7 +190,7 @@
       <height>80</height>
      </rect>
     </property>
-    <widget class="QPushButton" name="pushButton_2">
+    <widget class="QPushButton" name="btnOpenCam">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -206,7 +206,7 @@
       <string>Mở camera</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_3">
+    <widget class="QPushButton" name="btnCloseCam">
      <property name="geometry">
       <rect>
        <x>430</x>
@@ -254,7 +254,7 @@
        <x>70</x>
        <y>170</y>
        <width>381</width>
-       <height>131</height>
+       <height>227</height>
       </rect>
      </property>
      <layout class="QGridLayout" name="gridLayout">
@@ -342,7 +342,7 @@
        <x>189</x>
        <y>30</y>
        <width>231</width>
-       <height>131</height>
+       <height>227</height>
       </rect>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_2">

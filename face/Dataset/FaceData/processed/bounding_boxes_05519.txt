@@ -1,0 +1,152 @@
+Dataset/FaceData/processed\nghia\2024-04-19-16-41-2639.png
+Dataset/FaceData/processed\nghia\2024-04-19-16-41-3221.png
+Dataset/FaceData/processed\nghia\2024-04-19-16-41-573.png 0 0 160 160
+Dataset/FaceData/processed\nghia\2024-04-19-16-41-5510.png
+Dataset/FaceData/processed\nghia\2024-04-19-16-41-3318.png
+Dataset/FaceData/processed\nghia\2024-04-19-16-41-1150.png
+Dataset/FaceData/processed\nghia\2024-04-19-16-41-3219.png
+Dataset/FaceData/processed\nghia\2024-04-19-16-41-2934.png 0 0 160 160
+Dataset/FaceData/processed\nghia\2024-04-19-16-41-3126.png
+Dataset/FaceData/processed\nghia\2024-04-19-16-41-1745.png
+Dataset/FaceData/processed\nghia\2024-04-19-16-41-3123.png
+Dataset/FaceData/processed\nghia\2024-04-19-16-41-564.png
+Dataset/FaceData/processed\nghia\2024-04-19-16-41-4914.png 0 0 150 160
+Dataset/FaceData/processed\nghia\2024-04-19-16-41-1746.png
+Dataset/FaceData/processed\nghia\2024-04-19-16-41-1844.png
+Dataset/FaceData/processed\nghia\2024-04-19-16-41-3033.png
+Dataset/FaceData/processed\nghia\2024-04-19-16-41-3028.png
+Dataset/FaceData/processed\nghia\2024-04-19-16-41-1748.png
+Dataset/FaceData/processed\nghia\2024-04-19-16-41-2837.png
+Dataset/FaceData/processed\nghia\2024-04-19-16-41-569.png 0 0 160 160
+Dataset/FaceData/processed\nghia\2024-04-19-16-41-3030.png
+Dataset/FaceData/processed\nghia\2024-04-19-16-41-3317.png
+Dataset/FaceData/processed\nghia\2024-04-19-16-41-2643.png
+Dataset/FaceData/processed\nghia\2024-04-19-16-41-4913.png 1 2 148 160
+Dataset/FaceData/processed\nghia\2024-04-19-16-41-5511.png
+Dataset/FaceData/processed\nghia\2024-04-19-16-41-2838.png
+Dataset/FaceData/processed\nghia\2024-04-19-16-41-3316.png
+Dataset/FaceData/processed\nghia\2024-04-19-16-41-1747.png
+Dataset/FaceData/processed\nghia\2024-04-19-16-41-4415.png
+Dataset/FaceData/processed\nghia\2024-04-19-16-41-3127.png
+Dataset/FaceData/processed\nghia\2024-04-19-16-41-1749.png
+Dataset/FaceData/processed\nghia\2024-04-19-16-41-3031.png
+Dataset/FaceData/processed\nghia\2024-04-19-16-41-3029.png
+Dataset/FaceData/processed\nghia\2024-04-19-16-41-2641.png
+Dataset/FaceData/processed\nghia\2024-04-19-16-41-3032.png
+Dataset/FaceData/processed\nghia\2024-04-19-16-41-572.png 0 0 160 160
+Dataset/FaceData/processed\nghia\2024-04-19-16-41-2835.png
+Dataset/FaceData/processed\nghia\2024-04-19-16-41-3124.png
+Dataset/FaceData/processed\nghia\2024-04-19-16-41-3122.png
+Dataset/FaceData/processed\nghia\2024-04-19-16-41-3220.png
+Dataset/FaceData/processed\nghia\2024-04-19-16-41-567.png 0 0 160 160
+Dataset/FaceData/processed\nghia\2024-04-19-16-41-2640.png
+Dataset/FaceData/processed\nghia\2024-04-19-16-41-568.png
+Dataset/FaceData/processed\nghia\2024-04-19-16-41-4912.png 0 0 150 160
+Dataset/FaceData/processed\nghia\2024-04-19-16-41-2642.png
+Dataset/FaceData/processed\nghia\2024-04-19-16-41-2836.png 0 0 154 160
+Dataset/FaceData/processed\nghia\2024-04-19-16-41-565.png
+Dataset/FaceData/processed\nghia\2024-04-19-16-41-3125.png
+Dataset/FaceData/processed\nghia\2024-04-19-16-41-566.png
+Dataset/FaceData/processed\nghia\2024-04-19-16-41-571.png 0 0 160 160
+Dataset/FaceData/processed\phuc\2024-04-19-16-46-0016.png 0 0 160 160
+Dataset/FaceData/processed\phuc\2024-04-19-16-45-1338.png
+Dataset/FaceData/processed\phuc\2024-04-19-16-45-4824.png
+Dataset/FaceData/processed\phuc\2024-04-19-16-46-025.png 0 0 153 160
+Dataset/FaceData/processed\phuc\2024-04-19-16-46-024.png 0 0 154 160
+Dataset/FaceData/processed\phuc\2024-04-19-16-46-031.png
+Dataset/FaceData/processed\phuc\2024-04-19-16-46-027.png
+Dataset/FaceData/processed\phuc\2024-04-19-16-45-5821.png
+Dataset/FaceData/processed\phuc\2024-04-19-16-45-1148.png 0 0 160 160
+Dataset/FaceData/processed\phuc\2024-04-19-16-45-1246.png
+Dataset/FaceData/processed\phuc\2024-04-19-16-45-1242.png
+Dataset/FaceData/processed\phuc\2024-04-19-16-46-032.png 0 0 158 160
+Dataset/FaceData/processed\phuc\2024-04-19-16-45-1243.png
+Dataset/FaceData/processed\phuc\2024-04-19-16-45-4726.png
+Dataset/FaceData/processed\phuc\2024-04-19-16-45-1437.png
+Dataset/FaceData/processed\phuc\2024-04-19-16-45-2831.png
+Dataset/FaceData/processed\phuc\2024-04-19-16-45-1049.png
+Dataset/FaceData/processed\phuc\2024-04-19-16-45-5920.png 0 0 158 160
+Dataset/FaceData/processed\phuc\2024-04-19-16-45-3728.png
+Dataset/FaceData/processed\phuc\2024-04-19-16-45-5023.png
+Dataset/FaceData/processed\phuc\2024-04-19-16-46-019.png
+Dataset/FaceData/processed\phuc\2024-04-19-16-46-0112.png 0 0 153 160
+Dataset/FaceData/processed\phuc\2024-04-19-16-45-1244.png
+Dataset/FaceData/processed\phuc\2024-04-19-16-46-0110.png 3 0 160 160
+Dataset/FaceData/processed\phuc\2024-04-19-16-45-1340.png
+Dataset/FaceData/processed\phuc\2024-04-19-16-45-1339.png
+Dataset/FaceData/processed\phuc\2024-04-19-16-46-0014.png 0 0 160 160
+Dataset/FaceData/processed\phuc\2024-04-19-16-45-3729.png
+Dataset/FaceData/processed\phuc\2024-04-19-16-45-1241.png
+Dataset/FaceData/processed\phuc\2024-04-19-16-45-1245.png
+Dataset/FaceData/processed\phuc\2024-04-19-16-45-0650.png
+Dataset/FaceData/processed\phuc\2024-04-19-16-45-1835.png
+Dataset/FaceData/processed\phuc\2024-04-19-16-46-026.png 0 0 158 160
+Dataset/FaceData/processed\phuc\2024-04-19-16-46-0018.png 0 0 156 160
+Dataset/FaceData/processed\phuc\2024-04-19-16-46-0019.png 0 0 160 160
+Dataset/FaceData/processed\phuc\2024-04-19-16-46-0113.png 0 0 155 160
+Dataset/FaceData/processed\phuc\2024-04-19-16-46-023.png 0 0 152 160
+Dataset/FaceData/processed\phuc\2024-04-19-16-46-0017.png 0 0 160 160
+Dataset/FaceData/processed\phuc\2024-04-19-16-45-2732.png
+Dataset/FaceData/processed\phuc\2024-04-19-16-45-1834.png
+Dataset/FaceData/processed\phuc\2024-04-19-16-45-5722.png
+Dataset/FaceData/processed\phuc\2024-04-19-16-45-4825.png
+Dataset/FaceData/processed\phuc\2024-04-19-16-46-018.png
+Dataset/FaceData/processed\phuc\2024-04-19-16-45-1147.png
+Dataset/FaceData/processed\phuc\2024-04-19-16-45-1836.png 5 0 160 160
+Dataset/FaceData/processed\phuc\2024-04-19-16-46-0111.png
+Dataset/FaceData/processed\phuc\2024-04-19-16-46-0015.png 0 0 157 160
+Dataset/FaceData/processed\phuc\2024-04-19-16-45-3827.png
+Dataset/FaceData/processed\phuc\2024-04-19-16-45-3630.png
+Dataset/FaceData/processed\phuc\2024-04-19-16-45-2033.png
+Dataset/FaceData/processed\triet\2024-04-19-16-36-4750.png
+Dataset/FaceData/processed\triet\2024-04-19-16-38-4123.png 1 0 153 160
+Dataset/FaceData/processed\triet\2024-04-19-16-38-4026.png 12 0 158 160
+Dataset/FaceData/processed\triet\2024-04-19-16-38-3835.png 9 0 158 160
+Dataset/FaceData/processed\triet\2024-04-19-16-38-3838.png 8 0 160 160
+Dataset/FaceData/processed\triet\2024-04-19-16-38-453.png 9 0 160 160
+Dataset/FaceData/processed\triet\2024-04-19-16-38-3743.png 11 0 160 160
+Dataset/FaceData/processed\triet\2024-04-19-16-38-456.png 9 0 157 160
+Dataset/FaceData/processed\triet\2024-04-19-16-38-3930.png 6 0 148 160
+Dataset/FaceData/processed\triet\2024-04-19-16-38-4313.png 9 0 160 160
+Dataset/FaceData/processed\triet\2024-04-19-16-38-447.png 11 0 157 160
+Dataset/FaceData/processed\triet\2024-04-19-16-38-3647.png 11 0 160 160
+Dataset/FaceData/processed\triet\2024-04-19-16-38-4411.png 10 0 159 160
+Dataset/FaceData/processed\triet\2024-04-19-16-38-455.png 11 0 158 160
+Dataset/FaceData/processed\triet\2024-04-19-16-38-3836.png 11 0 158 160
+Dataset/FaceData/processed\triet\2024-04-19-16-38-448.png 12 0 157 160
+Dataset/FaceData/processed\triet\2024-04-19-16-38-4121.png 1 0 151 160
+Dataset/FaceData/processed\triet\2024-04-19-16-38-449.png 12 0 157 160
+Dataset/FaceData/processed\triet\2024-04-19-16-38-451.png 8 0 160 160
+Dataset/FaceData/processed\triet\2024-04-19-16-38-4027.png 11 0 156 160
+Dataset/FaceData/processed\triet\2024-04-19-16-38-4216.png 4 0 155 160
+Dataset/FaceData/processed\triet\2024-04-19-16-38-3933.png 12 0 159 160
+Dataset/FaceData/processed\triet\2024-04-19-16-38-3744.png 11 0 160 160
+Dataset/FaceData/processed\triet\2024-04-19-16-38-4412.png 11 0 160 160
+Dataset/FaceData/processed\triet\2024-04-19-16-38-4125.png 10 0 152 160
+Dataset/FaceData/processed\triet\2024-04-19-16-38-3650.png 11 0 160 160
+Dataset/FaceData/processed\triet\2024-04-19-16-38-4410.png 12 0 157 160
+Dataset/FaceData/processed\triet\2024-04-19-16-38-454.png 7 0 157 160
+Dataset/FaceData/processed\triet\2024-04-19-16-38-4028.png 8 0 154 160
+Dataset/FaceData/processed\triet\2024-04-19-16-38-4217.png 8 0 159 160
+Dataset/FaceData/processed\triet\2024-04-19-16-38-4029.png 8 0 157 160
+Dataset/FaceData/processed\triet\2024-04-19-16-38-4124.png 0 0 153 160
+Dataset/FaceData/processed\triet\2024-04-19-16-38-3934.png 12 0 157 160
+Dataset/FaceData/processed\triet\2024-04-19-16-38-3837.png 7 0 160 160
+Dataset/FaceData/processed\triet\2024-04-19-16-38-4219.png 0 0 148 160
+Dataset/FaceData/processed\triet\2024-04-19-16-38-3646.png 11 0 160 160
+Dataset/FaceData/processed\triet\2024-04-19-16-38-4314.png 9 0 160 160
+Dataset/FaceData/processed\triet\2024-04-19-16-38-3840.png 10 0 156 160
+Dataset/FaceData/processed\triet\2024-04-19-16-38-452.png 10 0 160 160
+Dataset/FaceData/processed\triet\2024-04-19-16-38-3931.png 9 0 155 160
+Dataset/FaceData/processed\triet\2024-04-19-16-38-3932.png 11 0 153 160
+Dataset/FaceData/processed\triet\2024-04-19-16-38-3839.png 5 0 158 160
+Dataset/FaceData/processed\triet\2024-04-19-16-38-3741.png 11 0 158 160
+Dataset/FaceData/processed\triet\2024-04-19-16-38-4215.png 4 0 156 160
+Dataset/FaceData/processed\triet\2024-04-19-16-38-3742.png 11 0 160 160
+Dataset/FaceData/processed\triet\2024-04-19-16-38-3648.png 11 0 160 160
+Dataset/FaceData/processed\triet\2024-04-19-16-36-4749.png
+Dataset/FaceData/processed\triet\2024-04-19-16-38-4122.png 4 0 154 160
+Dataset/FaceData/processed\triet\2024-04-19-16-38-3745.png 11 0 160 160
+Dataset/FaceData/processed\triet\2024-04-19-16-38-3649.png 11 0 160 160
+Dataset/FaceData/processed\triet\2024-04-19-16-38-4220.png 0 0 148 160
+Dataset/FaceData/processed\triet\2024-04-19-16-38-4218.png 7 0 157 160
