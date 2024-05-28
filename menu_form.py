@@ -4,16 +4,16 @@ from PyQt6.QtGui import QAction
 import sys
 import os
 
-from account_widget import AccountWidget
-from regconition_widget import *
-from home_widget import HomeWidget
-from sesson_widget import LessonWidget
 from ui import *
-from student_widget import *
-from teacher_widget import *
-from subject_widget import *
-from diemdanh_widget import *
-from stats_widget import *
+from widgets.account_widget import *
+from widgets.regconition_widget import *
+from widgets.home_widget import *
+from widgets.sesson_widget import *
+from widgets.student_widget import *
+from widgets.teacher_widget import *
+from widgets.subject_widget import *
+from widgets.attendance_widget import *
+from widgets.stats_widget import *
 
 
 

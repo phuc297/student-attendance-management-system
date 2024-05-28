@@ -24,7 +24,6 @@ class MainProgram(QMainWindow):
             dangnhap = False
             for tk in listtk:
                 if tk[1] == tentk and tk[2] == mk: 
-                    messagebox.showinfo('Thành công','Đăng nhập thành công !')
                     self.newwindow = QMainWindow()
                     self.ui_menu = MenuForm()
                     self.ui_menu.setupUi(self.newwindow)
@@ -34,9 +33,9 @@ class MainProgram(QMainWindow):
                     dangnhap=True
                     break
             if dangnhap is False:
-                messagebox.showinfo('lỗi đăng nhập','Thông tin tài khoản hoặc mật khẩu chưa chính xác !')
+                messagebox.showinfo('Lỗi đăng nhập','Thông tin tài khoản hoặc mật khẩu chưa chính xác !')
         else:
-            messagebox.showinfo('Thành công','Bạn chưa nhập đầy đủ thông tin !')
+            messagebox.showinfo('Lỗi đăng nhập','Bạn chưa nhập đầy đủ thông tin !')
         
         
 if __name__ == "__main__":

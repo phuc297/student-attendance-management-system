@@ -163,4 +163,6 @@ cython_debug/
 
 face/Models/*
 
-face/Dataset/*
+face/Dataset/FaceData/processed/*
+
+face/Dataset/FaceData/raw/*
