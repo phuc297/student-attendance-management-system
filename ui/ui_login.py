@@ -35,7 +35,7 @@ class Ui_MainWindow(object):
         self.GridLayout.setObjectName("GridLayout")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.GridLayout)
         self.verticalLayout.setObjectName("verticalLayout")
-        self.txt_taikhoan = QtWidgets.QTextEdit(parent=self.GridLayout)
+        self.txt_taikhoan = QtWidgets.QLineEdit(parent=self.GridLayout)
         font = QtGui.QFont()
         font.setPointSize(1)
         self.txt_taikhoan.setFont(font)
@@ -43,18 +43,17 @@ class Ui_MainWindow(object):
 "border: 2px solid black;\n"
 "font-size: 18px;\n"
 "border-radius: 0;\n"
-"padding: 5px 5px;")
-        self.txt_taikhoan.setLineWidth(1)
-        self.txt_taikhoan.setMidLineWidth(0)
+"padding: 10px 5px;")
         self.txt_taikhoan.setObjectName("txt_taikhoan")
         self.verticalLayout.addWidget(self.txt_taikhoan)
-        self.txt_matkhau = QtWidgets.QTextEdit(parent=self.GridLayout)
+        self.txt_matkhau = QtWidgets.QLineEdit(parent=self.GridLayout)
         self.txt_matkhau.setStyleSheet("background-color: white;\n"
 "border: 2px solid black;\n"
 "font-size: 18px;\n"
 "border-radius: 0;\n"
-"padding: 5px 5px;")
+"padding: 10px 5px;")
         self.txt_matkhau.setObjectName("txt_matkhau")
+        self.txt_matkhau.setEchoMode(QtWidgets.QLineEdit.EchoMode.Password)
         self.verticalLayout.addWidget(self.txt_matkhau)
         self.btn_login = QtWidgets.QPushButton(parent=self.frame_2)
         self.btn_login.setGeometry(QtCore.QRect(310, 310, 171, 41))

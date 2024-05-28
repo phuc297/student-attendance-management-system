@@ -25,6 +25,43 @@ class subjectDAL:
             pass
         return list
     
+    def getTenMH(maMH):
+        list = []
+        try:
+            conn = DatabaseConnector()
+            db = conn.connect()
+            cursor = db.cursor()
+            cursor.execute("select tenMH from monhoc where maMH = %s",(maMH,))          
+
+            for x in cursor:
+                list.append(x)
+        except Exception as e:
+            print(e)
+        try:
+            cursor.close()
+            db.close()
+        except:
+            pass
+        return list
+
+    def getMaGV(maMH):
+        list = []
+        try:
+            conn = DatabaseConnector()
+            db = conn.connect()
+            cursor = db.cursor()
+            cursor.execute("select maGV from monhoc where maMH = %s",(maMH,))          
+
+            for x in cursor:
+                list.append(x)
+        except Exception as e:
+            print(e)
+        try:
+            cursor.close()
+            db.close()
+        except:
+            pass
+        return list
 
     def add(subject):
        
@@ -32,8 +69,8 @@ class subjectDAL:
             conn= DatabaseConnector()
             db= conn.connect()
             cursor = db.cursor()
-            sql="insert into monhoc(tenMH,maGV) VALUES (%s, %s)"
-            cursor.execute(sql,(subject.tenMH, subject.maGV))
+            sql="insert into monhoc(tenMH,maGV,maLop) VALUES (%s, %s, %s)"
+            cursor.execute(sql,(subject.tenMH, subject.maGV, subject.malop))
             db.commit()
            
             return True
@@ -52,8 +89,8 @@ class subjectDAL:
             conn= DatabaseConnector()
             db= conn.connect()
             cursor = db.cursor()
-            sql="update monhoc set tenMH=%s, maGV=%s  where maMH=%s"
-            cursor.execute(sql,(subject.tenMH, subject.maGV, subject.maMH))
+            sql="update monhoc set tenMH=%s, maGV=%s, maLop=%s where maMH=%s"
+            cursor.execute(sql,(subject.tenMH, subject.maGV, subject.malop ,subject.maMH))
             db.commit()
            
             return True
@@ -104,5 +141,28 @@ class subjectDAL:
         finally:
             cursor.close()
             db.close()
+            
+            
+            
+            
+            
+    def getInfo():
+        list = []
+        try:
+            conn = DatabaseConnector()
+            db = conn.connect()
+            cursor = db.cursor()
+            cursor.execute("SELECT monhoc.maMH, monhoc.tenMH, giangvien.maGV, giangvien.hoTen, lop.maLop, lop.tenLop FROM monhoc JOIN giangvien ON monhoc.maGV = giangvien.maGV JOIN lop ON monhoc.maLop = lop.maLop;")          
+
+            for x in cursor:
+                list.append(x)
+        except Exception as e:
+            print(e)
+        try:
+            cursor.close()
+            db.close()
+        except:
+            pass
+        return list
 
                                         

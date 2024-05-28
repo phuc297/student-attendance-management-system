@@ -1,5 +1,6 @@
 from PyQt6 import QtCore, QtGui, QtWidgets
 from PyQt6.QtWidgets import QMainWindow, QApplication
+from bus.account_bus import *
 import sys
 import os
 from ui import *
@@ -15,12 +16,27 @@ class MainProgram(QMainWindow):
         self.ui.btn_login.clicked.connect(self.openMainMenu)
     
     def openMainMenu(self):
-        self.newwindow = QMainWindow()
-        self.ui_menu = MenuForm()
-        self.ui_menu.setupUi(self.newwindow)
-        self.ui_menu.initialize()
-        self.hide()
-        self.newwindow.show()
+        listtk=[]
+        listtk=AccountBUS.getList()
+        tentk=self.ui.txt_taikhoan.text()
+        mk=self.ui.txt_matkhau.text()
+        if tentk and mk is not None:
+            dangnhap = False
+            for tk in listtk:
+                if tk[1] == tentk and tk[2] == mk: 
+                    messagebox.showinfo('Thành công','Đăng nhập thành công !')
+                    self.newwindow = QMainWindow()
+                    self.ui_menu = MenuForm()
+                    self.ui_menu.setupUi(self.newwindow)
+                    self.ui_menu.initialize()
+                    self.hide()
+                    self.newwindow.show()
+                    dangnhap=True
+                    break
+            if dangnhap is False:
+                messagebox.showinfo('lỗi đăng nhập','Thông tin tài khoản hoặc mật khẩu chưa chính xác !')
+        else:
+            messagebox.showinfo('Thành công','Bạn chưa nhập đầy đủ thông tin !')
         
         
 if __name__ == "__main__":

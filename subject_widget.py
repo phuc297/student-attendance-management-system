@@ -3,6 +3,7 @@ from ui.ui_subject import Ui_Subject
 from bus.subject_bus import subjectBUS
 from dto.subject import *
 from bus.teacher_bus import TeacherBUS
+from bus.class_bus import ClassBUS
 import tkinter as tk
 from tkinter import messagebox
 
@@ -21,42 +22,52 @@ class SubjectWidget(Ui_Subject):
         
         
     def loadList(self):
-        list = subjectBUS.get_all()
+        list = subjectBUS.getInfo()
         self.table_mh.setRowCount(list.__len__())
         tablerow=0
-        list_gv = TeacherBUS.getList(); 
         if list is not None:
             for row in list:
                 self.table_mh.setItem(tablerow, 0, QtWidgets.QTableWidgetItem(str(row[0])))
                 self.table_mh.setItem(tablerow, 1, QtWidgets.QTableWidgetItem(str(row[1])))
-                for rowgv in list_gv: 
-                   if str(row[2]) == str(rowgv[0]): 
-                      self.table_mh.setItem(tablerow, 2, QtWidgets.QTableWidgetItem(str(rowgv[1])))            
+                self.table_mh.setItem(tablerow, 2, QtWidgets.QTableWidgetItem(str(row[3])))
+                self.table_mh.setItem(tablerow, 3, QtWidgets.QTableWidgetItem(str(row[5])))
+                     
                 tablerow += 1
     
     def tableEvent(self):
         cr = self.table_mh.currentRow()
         self.txt_maMH.setText(self.table_mh.item(cr, 0).text())
         self.txt_tenMH.setText(self.table_mh.item(cr, 1).text())
-        text_from_table = self.table_mh.item(cr, 2).text()
-        index = self.cb_gv.findText(text_from_table)  
-        if index != -1:  
-          self.cb_gv.setCurrentIndex(index)  
+        
+        text_from_table1 = self.table_mh.item(cr, 2).text()
+        index1 = self.cb_gv.findText(text_from_table1)  
+        if index1 != -1:  
+          self.cb_gv.setCurrentIndex(index1)  
+        
+        text_from_table2 = self.table_mh.item(cr, 3).text()
+        index2 = self.cb_lop.findText(text_from_table2)  
+        if index2 != -1:  
+          self.cb_lop.setCurrentIndex(index2)  
+        
        
 
     def clear(self): 
         self.txt_maMH.clear() 
         self.txt_tenMH.clear()
         self.cb_gv.setCurrentIndex(0)
+        self.cb_lop.setCurrentIndex(0)
     
     
     def loadCB(self): 
         self.cb_search.addItem("Tên môn học")
         self.cb_search.addItem("Giảng viên")
         list_gv = TeacherBUS.getList(); 
-        self.cb_gv.addItem("")
+        list_lop = ClassBUS.get_all()
         for rgv in list_gv: 
             self.cb_gv.addItem(rgv[1])
+            
+        for rlop in list_lop:
+            self.cb_lop.addItem(rlop[1])
             
 
     def addMH(self):
@@ -64,12 +75,19 @@ class SubjectWidget(Ui_Subject):
         tenMH=self.txt_tenMH.toPlainText()
         gv = self.cb_gv.currentText()
         magv = None
+        malop = None
         list_gv = TeacherBUS.getList()
         for row in list_gv: 
             if str(row[1]) == gv: 
                 magv = int(row[0])
-         
-        mh = subject(None,tenMH,magv)
+        
+        list_lop = ClassBUS.get_all()
+        for row in list_lop:
+            if str(row[1]) == self.cb_lop.currentText():
+                malop = int(row[0])
+        
+        
+        mh = subject(None,tenMH,magv,malop)
         subjectBUS.add(mh)
         self.loadList()
         self.clear()
@@ -90,33 +108,44 @@ class SubjectWidget(Ui_Subject):
          tenMH = self.txt_tenMH.toPlainText()
          gv = self.cb_gv.currentText()
          magv = None
+         malop = None
          list_gv = TeacherBUS.getList()
          for row in list_gv:
            if str(row[1]) == gv:
              magv = int(row[0])
+             
+         list_lop = ClassBUS.get_all()
+         for row in list_lop:
+              if str(row[1]) == self.cb_lop.currentText():
+                 malop = int(row[0])
         
-         if (self.cb_gv.currentText() == ""):
-             messagebox.showinfo("", "Vui lònng không để trống giảng viên")
+         if (self.cb_gv.currentText() == "" or self.cb_lop.currentText() == ""  or self.txt_tenMH.toPlainText() == ""):
+             messagebox.showinfo("", "Vui lònng không để trống thông tin")
         
          else:
-          mh = subject(maMH, tenMH, magv)
+          mh = subject(maMH, tenMH, magv, malop)
     
           subjectBUS.update_subject(mh)
 
           self.loadList()
           self.clear()
-
-          
-    
     
     def delete(self): 
-      try: 
-        maMH=int(self.txt_maMH.toPlainText())
-        subjectBUS.delete(maMH)
-        self.loadList()
-        self.clear()
-      except mysql.connector.IntegrityError as e:
-          messagebox.showinfo("", "Bạn cần xóa các buổi học và điểm danh trước")
+        try: 
+            if not self.table_mh.selectedItems():
+                messagebox.showinfo("", "Vui lòng chọn một môn học để xóa!")
+                return
+            else:
+                maMH=int(self.txt_maMH.toPlainText())
+                if subjectBUS.delete(maMH) == True:
+                    messagebox.showinfo("","Xóa thành công")
+                    self.loadList()
+                    self.clear()
+                else:
+                    messagebox.showinfo("","Xóa thất bại")
+        except Exception as e:
+                print(e)
+                messagebox.showinfo("", "Bạn cần xóa các buổi học và điểm danh trước")
 
 
     
@@ -138,7 +167,7 @@ class SubjectWidget(Ui_Subject):
           if item is not None:
             cell_text = item.text().lower()
             if search_text in cell_text:
-                self.table_mh.setRowHidden(row, False)  # Hiện hàng nếu tìm thấy
+                self.table_mh.setRowHidden(row, False)  
             else:
                 self.table_mh.setRowHidden(row, True)  
 

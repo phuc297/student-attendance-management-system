@@ -26,13 +26,31 @@ class AccountDAL:
             conn= DatabaseConnector()
             db= conn.connect()
             cursor = db.cursor()
-            sql="insert into taikhoan(email, matKhau, maGV) VALUES (%s, %s, %s)"
-            cursor.execute(sql,(account.email, account.matkhau, account.maGV))
+            sql="insert into taikhoan(tenTK, matKhau, loaiTK) VALUES (%s, %s, %s)"
+            cursor.execute(sql,(account.tenTK, account.matkhau, account.loaiTK))
             db.commit()
            
             return True
         except Exception as e:
             print("Lỗi",e)
+            db.rollback()
+        finally:
+            cursor.close()
+            db.close()
+        return False
+    
+    def update(account):
+        try: 
+            conn= DatabaseConnector()
+            db= conn.connect()
+            cursor = db.cursor()
+            sql="""update taikhoan set tenTK=%s ,matKhau=%s ,loaiTK=%s where maTK=%s """
+            cursor.execute(sql,(account.tenTK, account.matkhau, account.loaiTK,account.maTK))
+            db.commit()
+           
+            return True
+        except Exception as e:
+            print("Lỗi",e) 
             db.rollback()
         finally:
             cursor.close()

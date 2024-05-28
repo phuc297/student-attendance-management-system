@@ -355,47 +355,11 @@ p, li { white-space: pre-wrap; }
        <string>Nhập số điện thoại</string>
       </property>
      </widget>
-     <widget class="QLabel" name="lb_diachi">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>370</y>
-        <width>71</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>-1</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>Địa chỉ:</string>
-      </property>
-     </widget>
-     <widget class="QTextEdit" name="txt_diachi">
-      <property name="geometry">
-       <rect>
-        <x>90</x>
-        <y>370</y>
-        <width>411</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>-1</pointsize>
-       </font>
-      </property>
-      <property name="placeholderText">
-       <string>Nhập địa chỉ</string>
-      </property>
-     </widget>
      <widget class="QLabel" name="lb_lophoc">
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>420</y>
+        <y>370</y>
         <width>71</width>
         <height>41</height>
        </rect>
@@ -472,7 +436,7 @@ p, li { white-space: pre-wrap; }
       <property name="geometry">
        <rect>
         <x>90</x>
-        <y>420</y>
+        <y>370</y>
         <width>131</width>
         <height>41</height>
        </rect>
@@ -553,9 +517,9 @@ p, li { white-space: pre-wrap; }
          <number>0</number>
         </property>
         <item row="0" column="0">
-         <widget class="QPushButton" name="btn_luu_2">
+         <widget class="QPushButton" name="btnViewInfo">
           <property name="text">
-           <string>Lấy ảnh</string>
+           <string>Xem ảnh</string>
           </property>
          </widget>
         </item>

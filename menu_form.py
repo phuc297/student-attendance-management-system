@@ -5,14 +5,16 @@ import sys
 import os
 
 from account_widget import AccountWidget
-from attendence_widget import AttendenceWidget
+from regconition_widget import *
 from home_widget import HomeWidget
-from session_widget import LessonWidget
+from sesson_widget import LessonWidget
 from ui import *
 from student_widget import *
 from teacher_widget import *
 from subject_widget import *
-from class_widget import *
+from diemdanh_widget import *
+from stats_widget import *
+
 
 
 class MenuForm(Ui_MainMenu):
@@ -22,6 +24,7 @@ class MenuForm(Ui_MainMenu):
         self.initializePage()
 
         self.btnHome.clicked.connect(lambda: self.buttonClick(self.btnHome))
+        self.btnRegconition.clicked.connect(lambda: self.buttonClick(self.btnRegconition))
         self.btnAttendence.clicked.connect(lambda: self.buttonClick(self.btnAttendence))
         self.btnStudent.clicked.connect(lambda: self.buttonClick(self.btnStudent))
         self.btnTeacher.clicked.connect(lambda: self.buttonClick(self.btnTeacher))
@@ -33,6 +36,7 @@ class MenuForm(Ui_MainMenu):
     def initializePage(self):
         
         self.pageHome = QtWidgets.QWidget()
+        self.pageRegconition = QtWidgets.QWidget()
         self.pageAttendance = QtWidgets.QWidget()
         self.pageStudent = QtWidgets.QWidget()
         self.pageTeacher = QtWidgets.QWidget()
@@ -42,6 +46,7 @@ class MenuForm(Ui_MainMenu):
         self.pageAccount = QtWidgets.QWidget()
 
         self.stackedWidget.addWidget(self.pageHome)
+        self.stackedWidget.addWidget(self.pageRegconition)
         self.stackedWidget.addWidget(self.pageAttendance)
         self.stackedWidget.addWidget(self.pageStudent)
         self.stackedWidget.addWidget(self.pageTeacher)
@@ -56,6 +61,8 @@ class MenuForm(Ui_MainMenu):
 
         home_page = HomeWidget(self.pageHome)
 
+        reg_page = RegconitionWidget(self.pageRegconition)
+
         student_page = StudentWidget(self.pageStudent)
 
         teacher_page = TeacherWidget(self.pageTeacher)
@@ -65,9 +72,11 @@ class MenuForm(Ui_MainMenu):
 
         account_page = AccountWidget(self.pageAccount)
 
-        attendence_page = AttendenceWidget(self.pageAttendance)
+        attendence_page = diemdanhWidget(self.pageAttendance)
 
         lesson_page = LessonWidget(self.pageSession)
+
+        stat_page = StatsWidget(self.pageStats)
 
     def buttonClick(self, btn):
 
@@ -77,6 +86,12 @@ class MenuForm(Ui_MainMenu):
             self.stackedWidget.setCurrentWidget(self.pageHome)
             UIFunctions.resetStyle(self, btn)
             self.btnHome.setStyleSheet(UIFunctions.selectMenu())
+
+        if btnName == "btnRegconition":
+            self.stackedWidget.setCurrentWidget(self.pageRegconition)
+            UIFunctions.resetStyle(self, btn)
+            self.btnRegconition.setStyleSheet(UIFunctions.selectMenu())
+
 
         if btnName == "btnAttendence":
             self.stackedWidget.setCurrentWidget(self.pageAttendance)
@@ -98,7 +113,7 @@ class MenuForm(Ui_MainMenu):
             UIFunctions.resetStyle(self, btn)
             self.btnSubject.setStyleSheet(UIFunctions.selectMenu())
 
-        
+      
 
         if btnName == "btnSesson":
             self.stackedWidget.setCurrentWidget(self.pageSession)

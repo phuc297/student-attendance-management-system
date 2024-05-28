@@ -4,11 +4,14 @@ from dto.subject import *;
 
 
 class subjectBUS:
-    # def __init__(self, db):
-    #     self.subject_dal = subjectDAL(db)
-
     def add (subject):
-          return subjectDAL.add(subject)
+        return subjectDAL.add(subject)
+
+    def getTenMH(maMH):
+        return subjectDAL.getTenMH(maMH)
+    
+    def getMaGV(maMH):
+        return subjectDAL.getMaGV(maMH)
 
     def update_subject(subject):
         return subjectDAL.update(subject)
@@ -20,3 +23,7 @@ class subjectBUS:
         return subjectDAL.getList()
     def getIDSubject (tenMH):
         return subjectDAL.getIDMH(tenMH)
+    
+    
+    def getInfo ():
+        return subjectDAL.getInfo()

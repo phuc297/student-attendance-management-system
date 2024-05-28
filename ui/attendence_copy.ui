@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Attendence</class>
+ <widget class="QWidget" name="Attendence">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1400</width>
+    <height>800</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QFrame" name="panel1">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1400</width>
+     <height>800</height>
+    </rect>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#panel1{
+	margin:10% 10% 10% 10%;
+	border-radius: 5px;
+	border:1px solid black;
+}</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <widget class="QWidget" name="panel1_1" native="true">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>1400</width>
+      <height>80</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#panel1_1{
+	
+}</string>
+    </property>
+    <widget class="QLabel" name="label1">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>1380</width>
+       <height>80</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+#label1{
+	font: 15pt &quot;Arial&quot;;
+	padding-left:500px;	
+	color:red;
+	border:1px solid black;
+	border-radius:5px
+}
+
+</string>
+     </property>
+     <property name="text">
+      <string>HỆ THỐNG ĐIỂM DANH KHUÔN MẶT</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>100</y>
+      <width>491</width>
+      <height>511</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Màn hình nhận diện</string>
+    </property>
+    <widget class="QLabel" name="lbCamera">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>450</width>
+       <height>400</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="widget_2" native="true">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>620</y>
+      <width>371</width>
+      <height>80</height>
+     </rect>
+    </property>
+    <widget class="QPushButton" name="btnOpenCam">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>151</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 75 10pt &quot;MS Shell Dlg 2&quot;;</string>
+     </property>
+     <property name="text">
+      <string>Mở camera</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btnCloseCam">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>20</y>
+       <width>161</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 75 10pt &quot;MS Shell Dlg 2&quot;;</string>
+     </property>
+     <property name="text">
+      <string>Đóng camera</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_2">
+    <property name="geometry">
+     <rect>
+      <x>530</x>
+      <y>100</y>
+      <width>851</width>
+      <height>511</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Danh sách điểm danh</string>
+    </property>
+    <widget class="QTableWidget" name="tbDiemdanh">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>831</width>
+       <height>481</height>
+      </rect>
+     </property>
+     <property name="selectionBehavior">
+      <enum>QAbstractItemView::SelectRows</enum>
+     </property>
+     <attribute name="horizontalHeaderMinimumSectionSize">
+      <number>50</number>
+     </attribute>
+     <attribute name="horizontalHeaderDefaultSectionSize">
+      <number>140</number>
+     </attribute>
+     <column>
+      <property name="text">
+       <string>Mã buổi học</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Mã SV</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Họ tên</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Giờ vào</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Trạng thái</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Chi tiết</string>
+      </property>
+     </column>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="lbAleart">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>710</y>
+      <width>511</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font:20pt &quot;Arial&quot;;
+color:red;
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnDelete">
+    <property name="geometry">
+     <rect>
+      <x>1250</x>
+      <y>620</y>
+      <width>131</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Xóa điểm danh</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>530</x>
+      <y>620</y>
+      <width>131</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Chọn buổi học</string>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

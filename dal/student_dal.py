@@ -23,6 +23,44 @@ class StudentDAL:
             pass
         return list
     
+    def get(masv):
+        list = []
+        try:
+            conn = DatabaseConnector()
+            db = conn.connect()
+            cursor = db.cursor()
+            cursor.execute("select * from sinhvien where maSV = %s", (masv,))          
+
+            for x in cursor:
+                list.append(x)
+        except Exception as e:
+            print(e)
+        try:
+            cursor.close()
+            db.close()
+        except:
+            pass
+        return list
+    
+    def getHoTen(masv):
+        list = []
+        try:
+            conn = DatabaseConnector()
+            db = conn.connect()
+            cursor = db.cursor()
+            cursor.execute("select hoTen from sinhvien where maSV = %s", (masv,))          
+
+            for x in cursor:
+                list.append(x)
+        except Exception as e:
+            print(e)
+        try:
+            cursor.close()
+            db.close()
+        except:
+            pass
+        return list
+
     def add(student: Student):
         try: 
             conn= DatabaseConnector()
@@ -64,8 +102,8 @@ class StudentDAL:
             conn= DatabaseConnector()
             db= conn.connect()
             cursor = db.cursor()
-            sql = """UPDATE sinhvien SET hoTen = %s, maLop = %s, cmnd = %s, gioiTinh = %s, ngaySinh = %s, email = %s, SDT = %s WHERE maSV=%s"""
-            cursor.execute(sql,(student.hoten, student.malop, student.cmnd, student.gioitinh, student.ngaysinh, student.email, student.sdt, student.masv))
+            sql = """UPDATE sinhvien SET hoTen = %s, maLop = %s, gioitinh = %s, ngaysinh = %s, email = %s, sdt = %s, cmnd = %s WHERE maSV=%s"""
+            cursor.execute(sql,(student.hoten, student.malop, student.gioitinh, student.ngaysinh, student.email, student.sdt, student.cmnd, student.masv))
             db.commit()
            
             return True

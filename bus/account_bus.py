@@ -7,3 +7,5 @@ class AccountBUS:
           return AccountDAL.add(account)
      def delete(matk):
           return AccountDAL.delete(matk)
+     def update(account):
+          return AccountDAL.update(account)

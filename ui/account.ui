@@ -173,19 +173,6 @@
       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;left&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Mật khẩu&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
     </widget>
-    <widget class="QLabel" name="label_4">
-     <property name="geometry">
-      <rect>
-       <x>50</x>
-       <y>280</y>
-       <width>101</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;left&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Giảng viên&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-     </property>
-    </widget>
     <widget class="QTextEdit" name="txtTeacher">
      <property name="geometry">
       <rect>
@@ -230,6 +217,19 @@
      </property>
      <property name="text">
       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;left&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Mã tài khoản&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_4">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>280</y>
+       <width>101</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Loại tài khoản&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
     </widget>
    </widget>
@@ -298,6 +298,11 @@
        <height>31</height>
       </rect>
      </property>
+     <item>
+      <property name="text">
+       <string>Tên tài khoản</string>
+      </property>
+     </item>
     </widget>
     <widget class="QTableWidget" name="tbAccount">
      <property name="geometry">
@@ -372,7 +377,7 @@
      </column>
      <column>
       <property name="text">
-       <string>Mã giảng viên</string>
+       <string>Loại tài khoản</string>
       </property>
      </column>
     </widget>

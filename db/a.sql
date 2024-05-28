@@ -1,0 +1,1 @@
+SELECT * FROM diemdanhsinhvien.taikhoan;

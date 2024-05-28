@@ -1,9 +1,9 @@
 class Account:
-    def __init__(self, matk, email, matkhau, maGV):
-        self.matk = matk
-        self.email = email
+    def __init__(self,maTK, tenTK, matkhau,loaiTK):
+        self.maTK =maTK
+        self.tenTK = tenTK
         self.matkhau = matkhau
-        self.maGV = maGV
+        self.loaiTK = loaiTK
 
     def show(self):
-        print(f"{self.matk} {self.email} {self.matkhau} {self.maGV}")
+        print(f"{self.maTK} {self.tenTK} {self.matkhau} {self.loaiTK}")

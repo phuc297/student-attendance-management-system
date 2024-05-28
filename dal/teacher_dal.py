@@ -11,7 +11,6 @@ class TeacherDAL:
             cursor.execute("select * from giangvien")          
 
             for x in cursor:
-                # list.append(Student(x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7]))
                 list.append(x)
         except Exception as e:
             print(e)
@@ -21,14 +20,33 @@ class TeacherDAL:
         except:
             pass
         return list
-    def add(giangvien):
+    def getHoTen(magv):
+        list = []
+        try:
+            conn = DatabaseConnector()
+            db = conn.connect()
+            cursor = db.cursor()
+            cursor.execute("select hoTen from giangvien where maGV = %s", (magv,))          
+
+            for x in cursor:
+                list.append(x)
+        except Exception as e:
+            print(e)
+        try:
+            cursor.close()
+            db.close()
+        except:
+            pass
+        return list
+    def add(hoTen, gioitinh, cmnd, ngaysinh, email, sdt, maTK):
        
         try: 
             conn= DatabaseConnector()
             db= conn.connect()
             cursor = db.cursor()
-            sql="insert into giangvien(hoTen,SDT) VALUES (%s, %s)"
-            cursor.execute(sql,(giangvien.hoTen,giangvien.SDT))
+            sql="""INSERT INTO giangvien (hoTen, gioitinh, cmnd, ngaysinh, email, sdt, maTK) 
+            VALUES (%s, %s, %s, %s, %s, %s, %s);"""
+            cursor.execute(sql,(hoTen, gioitinh, cmnd, ngaysinh, email, sdt, maTK,))
             db.commit()
            
             return True
@@ -63,8 +81,8 @@ class TeacherDAL:
             conn= DatabaseConnector()
             db= conn.connect()
             cursor = db.cursor()
-            sql="update giangvien set hoTen=%s, SDT=%s  where maGV=%s"
-            cursor.execute(sql,(giangvien.hoTen,giangvien.SDT,giangvien.maGV,))
+            sql="UPDATE giangvien SET hoTen=%s, gioiTinh=%s, cmnd=%s,  ngaysinh=%s, email=%s, sdt=%s, maTK=%sWHERE maGV=%s"
+            cursor.execute(sql,(giangvien.hoTen,giangvien.gioitinh,giangvien.cmnd,giangvien.ngaysinh,giangvien.email,giangvien.sdt,giangvien.maTK,giangvien.maGV,))
             db.commit()
            
             return True
@@ -75,8 +93,33 @@ class TeacherDAL:
         finally:
             cursor.close()
             db.close()
+            
+    def checkAccount(maTK):
+        try:
+            conn = DatabaseConnector()
+            db = conn.connect()
+            cursor = db.cursor()
+            sql = "SELECT maTK FROM giangvien WHERE maTK = %s"
+            cursor.execute(sql, (maTK,))
 
-        
+            result = cursor.fetchall()  # Lấy tất cả các hàng kết quả
+
+            if result:
+                return True
+            else:
+                return False
+        except Exception as e:
+            print("Error occurred:", e)
+            return False
+        finally:
+            try:
+                if cursor:
+                    cursor.close()
+                if db:
+                    db.close()
+            except Exception as e:
+                print("Error occurred while closing cursor and connection:", e)
+
 
 
 

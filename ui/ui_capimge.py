@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file 'ui_capimge.ui'
+# Form implementation generated from reading ui file '.\student_image.ui'
 #
 # Created by: PyQt6 UI code generator 6.6.1
 #
@@ -9,12 +9,12 @@
 from PyQt6 import QtCore, QtGui, QtWidgets
 
 
-class Ui_Capimge(object):
-    def setupUi(self, Capimge):
-        Capimge.setObjectName("Capimge")
-        Capimge.resize(1359, 661)
-        self.frame = QtWidgets.QFrame(parent=Capimge)
-        self.frame.setGeometry(QtCore.QRect(0, 0, 1361, 831))
+class Ui_StudentImage(object):
+    def setupUi(self, StudentImage):
+        StudentImage.setObjectName("StudentImage")
+        StudentImage.resize(1017, 568)
+        self.frame = QtWidgets.QFrame(parent=StudentImage)
+        self.frame.setGeometry(QtCore.QRect(0, 0, 1021, 571))
         self.frame.setStyleSheet("#frame{\n"
 "    background-color: #D5EDF9;\n"
 "}\n"
@@ -30,7 +30,7 @@ class Ui_Capimge(object):
         self.frame.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.frame.setObjectName("frame")
         self.grbx_thongtin = QtWidgets.QGroupBox(parent=self.frame)
-        self.grbx_thongtin.setGeometry(QtCore.QRect(40, 30, 1311, 621))
+        self.grbx_thongtin.setGeometry(QtCore.QRect(40, 30, 931, 521))
         font = QtGui.QFont()
         font.setPointSize(-1)
         font.setBold(True)
@@ -45,82 +45,70 @@ class Ui_Capimge(object):
         self.grbx_thongtin.setCheckable(False)
         self.grbx_thongtin.setObjectName("grbx_thongtin")
         self.lb_hinhanh = QtWidgets.QLabel(parent=self.grbx_thongtin)
-        self.lb_hinhanh.setGeometry(QtCore.QRect(400, 100, 250, 201))
+        self.lb_hinhanh.setGeometry(QtCore.QRect(370, 100, 250, 250))
         self.lb_hinhanh.setStyleSheet("border: 1px solid black;\n"
 "")
         self.lb_hinhanh.setText("")
         self.lb_hinhanh.setObjectName("lb_hinhanh")
         self.splitter = QtWidgets.QSplitter(parent=self.grbx_thongtin)
-        self.splitter.setGeometry(QtCore.QRect(1050, 500, 241, 51))
+        self.splitter.setGeometry(QtCore.QRect(650, 370, 241, 51))
         self.splitter.setOrientation(QtCore.Qt.Orientation.Horizontal)
         self.splitter.setObjectName("splitter")
-        self.btn_mocam = QtWidgets.QPushButton(parent=self.splitter)
-        self.btn_mocam.setObjectName("btn_mocam")
-        self.btn_chupanh = QtWidgets.QPushButton(parent=self.splitter)
-        self.btn_chupanh.setStyleSheet("font-size: 14px")
-        self.btn_chupanh.setObjectName("btn_chupanh")
+        self.pushButton = QtWidgets.QPushButton(parent=self.splitter)
+        self.pushButton.setObjectName("pushButton")
+        self.pushButton_2 = QtWidgets.QPushButton(parent=self.splitter)
+        self.pushButton_2.setStyleSheet("font-size: 14px")
+        self.pushButton_2.setObjectName("pushButton_2")
+        self.lb_hinhanh_2 = QtWidgets.QLabel(parent=self.grbx_thongtin)
+        self.lb_hinhanh_2.setGeometry(QtCore.QRect(640, 100, 250, 250))
+        self.lb_hinhanh_2.setStyleSheet("border: 1px solid black;\n"
+"")
+        self.lb_hinhanh_2.setText("")
+        self.lb_hinhanh_2.setObjectName("lb_hinhanh_2")
         self.label = QtWidgets.QLabel(parent=self.grbx_thongtin)
-        self.label.setGeometry(QtCore.QRect(400, 330, 251, 20))
+        self.label.setGeometry(QtCore.QRect(370, 360, 251, 20))
         self.label.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.label.setObjectName("label")
-        self.btn_dong = QtWidgets.QPushButton(parent=self.grbx_thongtin)
-        self.btn_dong.setGeometry(QtCore.QRect(1180, 570, 111, 41))
-        self.btn_dong.setObjectName("btn_dong")
-        self.btn_xoa = QtWidgets.QPushButton(parent=self.grbx_thongtin)
-        self.btn_xoa.setGeometry(QtCore.QRect(60, 450, 111, 41))
-        self.btn_xoa.setObjectName("btn_xoa")
-        self.listhinhanh = QtWidgets.QListWidget(parent=self.grbx_thongtin)
-        self.listhinhanh.setGeometry(QtCore.QRect(60, 100, 291, 341))
-        self.listhinhanh.setStyleSheet("font-size:20px")
-        self.listhinhanh.setObjectName("listhinhanh")
-        item = QtWidgets.QListWidgetItem()
-        self.listhinhanh.addItem(item)
-        self.btn_xacnhan = QtWidgets.QPushButton(parent=self.grbx_thongtin)
-        self.btn_xacnhan.setGeometry(QtCore.QRect(1060, 570, 111, 41))
-        self.btn_xacnhan.setObjectName("btn_xacnhan")
+        self.pushButton_3 = QtWidgets.QPushButton(parent=self.grbx_thongtin)
+        self.pushButton_3.setGeometry(QtCore.QRect(780, 470, 111, 41))
+        self.pushButton_3.setObjectName("pushButton_3")
+        self.pushButton_4 = QtWidgets.QPushButton(parent=self.grbx_thongtin)
+        self.pushButton_4.setGeometry(QtCore.QRect(60, 450, 111, 41))
+        self.pushButton_4.setObjectName("pushButton_4")
+        self.listWidget = QtWidgets.QListWidget(parent=self.grbx_thongtin)
+        self.listWidget.setGeometry(QtCore.QRect(60, 100, 291, 341))
+        self.listWidget.setStyleSheet("font-size:20px")
+        self.listWidget.setObjectName("listWidget")
+        self.pushButton_5 = QtWidgets.QPushButton(parent=self.grbx_thongtin)
+        self.pushButton_5.setGeometry(QtCore.QRect(660, 470, 111, 41))
+        self.pushButton_5.setObjectName("pushButton_5")
         self.label_2 = QtWidgets.QLabel(parent=self.grbx_thongtin)
-        self.label_2.setGeometry(QtCore.QRect(220, 20, 921, 61))
+        self.label_2.setGeometry(QtCore.QRect(10, 10, 921, 61))
         self.label_2.setStyleSheet("font-size:25px;\n"
 "font-weight: bold;")
         self.label_2.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.label_2.setObjectName("label_2")
-        self.widget = QtWidgets.QWidget(parent=self.grbx_thongtin)
-        self.widget.setGeometry(QtCore.QRect(680, 100, 601, 371))
-        self.widget.setStyleSheet("#widget{\n"
-"border:1px solid black;\n"
-"}")
-        self.widget.setObjectName("widget")
-        self.lb_cam = QtWidgets.QLabel(parent=self.widget)
-        self.lb_cam.setGeometry(QtCore.QRect(10, 10, 581, 351))
-        self.lb_cam.setStyleSheet("")
-        self.lb_cam.setObjectName("lb_cam")
 
-        self.retranslateUi(Capimge)
-        QtCore.QMetaObject.connectSlotsByName(Capimge)
+        self.retranslateUi(StudentImage)
+        QtCore.QMetaObject.connectSlotsByName(StudentImage)
 
-    def retranslateUi(self, Capimge):
+    def retranslateUi(self, StudentImage):
         _translate = QtCore.QCoreApplication.translate
-        Capimge.setWindowTitle(_translate("Capimge", "Form"))
-        self.btn_mocam.setText(_translate("Capimge", "Mở/ Đóng camera"))
-        self.btn_chupanh.setText(_translate("Capimge", "Chụp ảnh"))
-        self.label.setText(_translate("Capimge", "Xem trước hình ảnh"))
-        self.btn_dong.setText(_translate("Capimge", "Đóng"))
-        self.btn_xoa.setText(_translate("Capimge", "Xóa"))
-        __sortingEnabled = self.listhinhanh.isSortingEnabled()
-        self.listhinhanh.setSortingEnabled(False)
-        item = self.listhinhanh.item(0)
-        item.setText(_translate("Capimge", "New Item"))
-        self.listhinhanh.setSortingEnabled(__sortingEnabled)
-        self.btn_xacnhan.setText(_translate("Capimge", "Xác nhận"))
-        self.label_2.setText(_translate("Capimge", "HÌNH ẢNH"))
-        self.lb_cam.setText(_translate("Capimge", "<html><head/><body><p><br/></p></body></html>"))
+        StudentImage.setWindowTitle(_translate("StudentImage", "Form"))
+        self.pushButton.setText(_translate("StudentImage", "Mở/ Đóng camera"))
+        self.pushButton_2.setText(_translate("StudentImage", "Chụp ảnh"))
+        self.label.setText(_translate("StudentImage", "Xem trước hình ảnh"))
+        self.pushButton_3.setText(_translate("StudentImage", "Đóng"))
+        self.pushButton_4.setText(_translate("StudentImage", "Xóa"))
+        self.pushButton_5.setText(_translate("StudentImage", "Xác nhận"))
+        self.label_2.setText(_translate("StudentImage", "HÌNH ẢNH"))
 
 
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
-    Capimge = QtWidgets.QWidget()
-    ui = Ui_Capimge()
-    ui.setupUi(Capimge)
-    Capimge.show()
+    StudentImage = QtWidgets.QWidget()
+    ui = Ui_StudentImage()
+    ui.setupUi(StudentImage)
+    StudentImage.show()
     sys.exit(app.exec())

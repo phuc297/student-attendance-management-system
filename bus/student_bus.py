@@ -4,6 +4,10 @@ class StudentBUS:
     
     def getList():
         return StudentDAL.getList()
+    def get(masv):
+        return StudentDAL.get(masv)
+    def getHoTen(masv):
+        return StudentDAL.getHoTen(masv)
     def add(student):
         return StudentDAL.add(student)
     def delete(masv):

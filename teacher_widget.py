@@ -1,82 +1,168 @@
+import re
+import tkinter as tk
+from tkinter import messagebox
 from ui.ui_teacher import *
+from bus.account_bus import *
 from bus.teacher_bus import *
 from dto.teacher import Teacher
-from PyQt6.QtWidgets import QMessageBox
+from PyQt6.QtWidgets import QMessageBox,QDateEdit
+from PyQt6.QtCore import QDate
 class TeacherWidget(Ui_Teacher):
    
     def __init__(self, page):
         self.setupUi(page)
         self.loadList()
+        self.loadCombobox()
         self.tableteacher.itemClicked.connect(lambda: self.tableEvent())
-        self.btn_luu.clicked.connect(lambda: self.addgiangvien(page))
-        self.btn_xoa.clicked.connect(lambda: self.deletegiangvien(page))
-        self.btn_sua.clicked.connect(lambda: self.updategiangvien(page))
+        self.btn_luu.clicked.connect(lambda: self.addgiangvien())
+        self.btn_xoa.clicked.connect(lambda: self.deletegiangvien())
+        self.btn_sua.clicked.connect(lambda: self.updategiangvien())
         self.btn_reset.clicked.connect(lambda: self.cleartxt())
         self.btn_timkiem.clicked.connect(lambda: self.timkiem())
-        self.btn_xemtatca.clicked.connect(lambda: self.loadList())
+        self.btn_xemtatca.clicked.connect(lambda: self.resettb())
 
+    def resettb(self):
+        self.txt_timkiem.clear()
+        self.comboBoxtimkiem.setCurrentIndex(0)
+        self.timkiem()
+        
     def loadList(self):
         list = TeacherBUS.getList()
-       
-        self.tableteacher.setRowCount(len(list))
-
-        tablerow=0
         if list is not None:
+            self.tableteacher.setRowCount(len(list))
+            tablerow=0
             for row in list:
                 self.tableteacher.setItem(tablerow, 0, QtWidgets.QTableWidgetItem(str(row[0])))
                 self.tableteacher.setItem(tablerow, 1, QtWidgets.QTableWidgetItem(str(row[1])))
-                self.tableteacher.setItem(tablerow, 2, QtWidgets.QTableWidgetItem(str(row[2])))        
+                self.tableteacher.setItem(tablerow, 2, QtWidgets.QTableWidgetItem(str(row[2])))
+                self.tableteacher.setItem(tablerow, 3, QtWidgets.QTableWidgetItem(str(row[3])))
+                self.tableteacher.setItem(tablerow, 4, QtWidgets.QTableWidgetItem(str(row[4])))
+                self.tableteacher.setItem(tablerow, 5, QtWidgets.QTableWidgetItem(str(row[5])))
+                self.tableteacher.setItem(tablerow, 6, QtWidgets.QTableWidgetItem(str(row[6])))
+                self.tableteacher.setItem(tablerow, 7, QtWidgets.QTableWidgetItem(str(row[7])))
                 tablerow += 1
-    
+                
+    def loadCombobox(self):
+        listtk = AccountBUS.getList()
+        if listtk is not None:
+            for row in listtk:
+                # if TeacherBUS.checkAccount(str(row[0])) == False:
+                    self.cbx_maTK.addItem(str(row[0]))
 
+        
     def tableEvent(self):
-        cr = self.tableteacher.currentRow()
-        self.txt_id.setText(self.tableteacher.item(cr, 0).text())
-        self.txt_hoten.setText(self.tableteacher.item(cr, 1).text())
-        self.txt_sdt.setText(self.tableteacher.item(cr, 2).text())
+            cr = self.tableteacher.currentRow()
+            self.txt_id.setText(self.tableteacher.item(cr, 0).text())
+            self.txt_hoten.setText(self.tableteacher.item(cr, 1).text())
+            self.txt_cccd.setText(self.tableteacher.item(cr, 3).text())
+            self.cbx_gioitinh.setCurrentText(self.tableteacher.item(cr, 2).text())
+            self.txt_email.setText(self.tableteacher.item(cr, 5).text())
+            self.txt_sdt.setText(self.tableteacher.item(cr, 6).text())
+            self.cbx_maTK.setCurrentText(self.tableteacher.item(cr, 7).text())
+            self.dateEdit.setDate(QDate.fromString(str(self.tableteacher.item(cr, 4).text()), "yyyy-MM-dd"))
+            
 
-    def addgiangvien(self,page):
-        if (self.txt_id.toPlainText()==""):
-        
-            hoTen = self.txt_hoten.toPlainText()
-            SDT = self.txt_sdt.toPlainText()
-
-            # Kiểm tra xem các trường dữ liệu có bị thiếu không
-            if not hoTen.strip() or not SDT.strip():
-                QMessageBox.warning(page, "Lỗi", "Vui lòng nhập đầy đủ thông tin.")
-                return
-
-            giangvien = Teacher(None, hoTen, SDT)
-            TeacherBUS.addlist(giangvien)
-            self.loadList()
+    def check_email(self, email_text):
+        if re.match(r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$', email_text):
+            return True
         else:
-            QMessageBox.warning(page, "Lỗi", "vui lòng làm mới thông tin trước khi thêm!")
+            return False
+
+    def addgiangvien(self):
+        if (self.txt_id.toPlainText()==""):
+            
+            hoTen = self.txt_hoten.toPlainText()
+            gioitinh=self.cbx_gioitinh.currentText()
+            cccd=self.txt_cccd.toPlainText()
+            ngaysinh=self.dateEdit.date().toString("yyyy-MM-dd")
+            email=self.txt_email.toPlainText()
+            sdt = self.txt_sdt.toPlainText()
+            maTK=self.cbx_maTK.currentText()
+
+            if hoTen == "" or cccd == "" or email == "" or sdt == "" or self.cbx_maTK.currentIndex() == 0:
+                messagebox.showwarning("", "Vui lòng nhập đầy đủ thông tin trước khi thêm!")
+                return
+            year = self.dateEdit.date().year()
+            currentYear = QDate.currentDate().year()
+            if self.dateEdit.date() < QDate(1900, 1, 1) or (currentYear - year) < 18:
+                messagebox.showwarning("", "Vui lòng nhập năm sinh hợp lệ và trên 18 tuổi!")
+                return
+            if cccd.__len__() != 12 or not cccd.isdigit():
+                messagebox.showwarning("", "Vui lòng nhập số chứng minh nhân dân đúng định dạng 12 số!")
+                return
+            if sdt.__len__() != 10 or not sdt.isdigit():
+                messagebox.showwarning("", "Vui lòng nhập số điện thoại đúng định dạng 10 số!")
+                return
+            if not self.check_email(email):
+                messagebox.showwarning("", "Email không đúng định dạng")
+                return
+            
+            if TeacherBUS.add(hoTen, gioitinh, cccd, ngaysinh, email, sdt, maTK) == True:
+                messagebox.showinfo("", "Thêm thành công!")
+                self.loadList()
+                self.cleartxt()
+            else:
+                messagebox.showwarning("", "Thêm thất bại!")
+        else:
+            messagebox.showwarning("Lỗi", "Vui lòng làm mới thông tin trước khi thêm!")
 
 
-    def deletegiangvien(self,page):
-        maGV=self.txt_id.toPlainText()
-
-        if not maGV.strip() :
-           QMessageBox.warning(page, "Lỗi", "Vui lòng chọn giảng viên cần xoá !")
-           return
+    def deletegiangvien(self):
+        if (self.txt_id.toPlainText() == ""):
+            messagebox.showwarning("Lỗi", "Vui lòng chọn giảng viên cần xóa!")
+            return
         
-        TeacherBUS.delete(maGV)
-        self.loadList()
-        self.cleartxt()
+        maGV=self.txt_id.toPlainText()
+        if messagebox.askyesno("Xác nhận", "Bạn có chắc chắn muốn xóa ?") == tk.YES:
+            if TeacherBUS.delete(maGV) == True:
+                    messagebox.showinfo("","Xóa thành công")
+                    self.loadList()
+                    self.cleartxt()
+            else:
+                messagebox.showwarning("","Xóa thất bại")
+        else:
+            return
+        
 
-    def updategiangvien(self,page):
-         maGV=self.txt_id.toPlainText()
-         hoTen = self.txt_hoten.toPlainText()
-         SDT = self.txt_sdt.toPlainText()
-
-         if not hoTen.strip() or not SDT.strip() or not maGV.strip():
-           QMessageBox.warning(page, "Lỗi", "Vui lòng nhập đầy đủ thông tin.")
-           return
-         
-         giangvien = Teacher(maGV,hoTen,SDT)
-         TeacherBUS.update(giangvien)
-         self.loadList()
-         self.cleartxt()
+    def updategiangvien(self):
+        if (self.txt_id.toPlainText() != ""):
+            maGV = self.txt_id.toPlainText()
+            hoTen = self.txt_hoten.toPlainText()
+            gioitinh = self.cbx_gioitinh.currentText()
+            cccd = self.txt_cccd.toPlainText()
+            ngaysinh = self.dateEdit.date().toString("yyyy-MM-dd")
+            email = self.txt_email.toPlainText()
+            sdt = self.txt_sdt.toPlainText()
+            maTK = self.cbx_maTK.currentText()
+        
+            
+            if hoTen == "" or cccd == "" or email == "" or sdt == "" or maTK == "":
+                messagebox.showwarning("", "Vui lòng nhập đầy đủ thông tin trước khi thêm!")
+                return
+            year = self.dateEdit.date().year()
+            currentYear = QDate.currentDate().year()
+            if self.dateEdit.date() < QDate(1900, 1, 1) or (currentYear - year) < 18:
+                messagebox.showwarning("", "Vui lòng nhập năm sinh hợp lệ và trên 18 tuổi!")
+                return
+            if cccd.__len__() != 12 or not cccd.isdigit():
+                messagebox.showwarning("", "Vui lòng nhập số chứng minh nhân dân đúng định dạng 12 số!")
+                return
+            if sdt.__len__() != 10 or not sdt.isdigit():
+                messagebox.showwarning("", "Vui lòng nhập số điện thoại đúng định dạng 10 số!")
+                return
+            if not self.check_email(email):
+                messagebox.showwarning("", "Email không đúng định dạng")
+                return
+        
+            giangvien = Teacher(maGV, hoTen, gioitinh, cccd, ngaysinh, email, sdt, maTK)
+            if TeacherBUS.update(giangvien) == True:
+                messagebox.showinfo("", "Sửa thành công!")
+                self.loadList()
+                self.cleartxt()
+            else:
+                messagebox.showwarning("", "Sửa thất bại!")
+        else:
+            messagebox.showwarning("Lỗi", "Vui lòng chọn thông tin cần sửa!")
 
     def timkiem(self):
         keyword = self.comboBoxtimkiem.currentText()
@@ -102,11 +188,16 @@ class TeacherWidget(Ui_Teacher):
                 else:
                     self.tableteacher.setRowHidden(row, True)
 
-    def update(self):   
-        pass
     
     def cleartxt(self):
         self.txt_id.clear()
         self.txt_hoten.clear()
+        self.dateEdit.clear()
+        self.txt_cccd.clear()
+        self.cbx_gioitinh.setCurrentIndex(0)
+        self.cbx_maTK.setCurrentIndex(0)
+        self.txt_email.clear()
         self.txt_sdt.clear()
+        self.dateEdit.setDate(QDate.currentDate())
+      
     

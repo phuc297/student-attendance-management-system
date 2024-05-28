@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file '.\attendence.ui'
+# Form implementation generated from reading ui file '.\attendence_copy2.ui'
 #
 # Created by: PyQt6 UI code generator 6.6.1
 #
@@ -13,150 +13,277 @@ class Ui_Attendence(object):
     def setupUi(self, Attendence):
         Attendence.setObjectName("Attendence")
         Attendence.resize(1400, 800)
-        self.panel1 = QtWidgets.QFrame(parent=Attendence)
-        self.panel1.setGeometry(QtCore.QRect(0, 0, 1400, 780))
-        self.panel1.setAutoFillBackground(False)
-        self.panel1.setStyleSheet("#panel1{\n"
-"    margin:10% 10% 10% 10%;\n"
-"    border-radius: 5px;\n"
-"    border:1px solid black;\n"
-"}")
-        self.panel1.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.panel1.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
-        self.panel1.setObjectName("panel1")
-        self.panel1_1 = QtWidgets.QWidget(parent=self.panel1)
-        self.panel1_1.setGeometry(QtCore.QRect(10, 10, 1400, 80))
-        self.panel1_1.setAutoFillBackground(False)
-        self.panel1_1.setStyleSheet("#panel1_1{\n"
-"    \n"
-"}")
-        self.panel1_1.setObjectName("panel1_1")
-        self.label1 = QtWidgets.QLabel(parent=self.panel1_1)
-        self.label1.setGeometry(QtCore.QRect(0, 0, 1380, 80))
-        self.label1.setStyleSheet("\n"
-"#label1{\n"
-"    font: 15pt \"Arial\";\n"
-"    padding-left:500px;    \n"
-"    color:red;\n"
-"    border:1px solid black;\n"
-"    border-radius:5px\n"
+        self.frame = QtWidgets.QFrame(parent=Attendence)
+        self.frame.setGeometry(QtCore.QRect(0, 0, 1400, 800))
+        self.frame.setStyleSheet("QTextEdit{\n"
+"    font-size: 14px;\n"
+"    padding: 5px;\n"
+"    background-color: white;\n"
+"    border: 1px solid black;\n"
 "}\n"
-"\n"
+"#fr_sinhvien, #fr_lophoc, #fr_thongtin{\n"
+"    border: 2px solid grey;\n"
+"}\n"
+"QComboBox{\n"
+"    font-size:14px;\n"
+"    border: 1px solid black;\n"
+"    padding: 5px\n"
+"}\n"
+"QComboBox::drop-down{\n"
+"    border: none;\n"
+"}\n"
+"QComboBox::down-arrow{\n"
+"    image: url(:/assets/assets/icons/droparrow.ico);\n"
+"    width: 18px;\n"
+"    background-color: white;\n"
+"    height: 20px;\n"
+"    margin-right: 15px\n"
+"}\n"
+"QComboBox:on\n"
+"QComboBox QListView\n"
+"QComboBox QListView::item\n"
+"QComboBox QListView::item:hover\n"
+"QComboBox QListView::item:selected")
+        self.frame.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        self.frame.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.frame.setObjectName("frame")
+        self.lb_main = QtWidgets.QLabel(parent=self.frame)
+        self.lb_main.setGeometry(QtCore.QRect(0, 0, 1400, 50))
+        font = QtGui.QFont()
+        font.setPointSize(18)
+        font.setBold(True)
+        font.setWeight(75)
+        self.lb_main.setFont(font)
+        self.lb_main.setStyleSheet("color:red\n"
 "")
-        self.label1.setObjectName("label1")
-        self.groupBox = QtWidgets.QGroupBox(parent=self.panel1)
-        self.groupBox.setGeometry(QtCore.QRect(110, 130, 711, 500))
-        self.groupBox.setObjectName("groupBox")
-        self.horizontalLayoutWidget = QtWidgets.QWidget(parent=self.groupBox)
-        self.horizontalLayoutWidget.setGeometry(QtCore.QRect(20, 20, 671, 61))
-        self.horizontalLayoutWidget.setObjectName("horizontalLayoutWidget")
-        self.horizontalLayout = QtWidgets.QHBoxLayout(self.horizontalLayoutWidget)
-        self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
-        self.horizontalLayout.setObjectName("horizontalLayout")
-        self.label = QtWidgets.QLabel(parent=self.horizontalLayoutWidget)
-        self.label.setObjectName("label")
-        self.horizontalLayout.addWidget(self.label)
-        self.comboBox_2 = QtWidgets.QComboBox(parent=self.horizontalLayoutWidget)
-        self.comboBox_2.setCurrentText("")
-        self.comboBox_2.setObjectName("comboBox_2")
-        self.horizontalLayout.addWidget(self.comboBox_2)
-        self.label_7 = QtWidgets.QLabel(parent=self.horizontalLayoutWidget)
-        self.label_7.setObjectName("label_7")
-        self.horizontalLayout.addWidget(self.label_7)
-        self.comboBox_6 = QtWidgets.QComboBox(parent=self.horizontalLayoutWidget)
-        self.comboBox_6.setCurrentText("")
-        self.comboBox_6.setObjectName("comboBox_6")
-        self.horizontalLayout.addWidget(self.comboBox_6)
-        self.label_2 = QtWidgets.QLabel(parent=self.horizontalLayoutWidget)
-        self.label_2.setObjectName("label_2")
-        self.horizontalLayout.addWidget(self.label_2)
-        self.comboBox = QtWidgets.QComboBox(parent=self.horizontalLayoutWidget)
-        self.comboBox.setObjectName("comboBox")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.horizontalLayout.addWidget(self.comboBox)
-        self.label_3 = QtWidgets.QLabel(parent=self.groupBox)
-        self.label_3.setGeometry(QtCore.QRect(20, 440, 671, 41))
-        self.label_3.setObjectName("label_3")
-        self.lbCamera = QtWidgets.QLabel(parent=self.groupBox)
-        self.lbCamera.setGeometry(QtCore.QRect(20, 90, 671, 351))
-        self.lbCamera.setText("")
-        self.lbCamera.setObjectName("lbCamera")
-        self.widget_2 = QtWidgets.QWidget(parent=self.panel1)
-        self.widget_2.setGeometry(QtCore.QRect(110, 640, 711, 80))
-        self.widget_2.setObjectName("widget_2")
-        self.btnOpenCam = QtWidgets.QPushButton(parent=self.widget_2)
-        self.btnOpenCam.setGeometry(QtCore.QRect(10, 20, 261, 41))
+        self.lb_main.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.lb_main.setObjectName("lb_main")
+        self.line = QtWidgets.QFrame(parent=self.frame)
+        self.line.setGeometry(QtCore.QRect(0, 50, 1400, 3))
+        self.line.setFrameShape(QtWidgets.QFrame.Shape.HLine)
+        self.line.setFrameShadow(QtWidgets.QFrame.Shadow.Sunken)
+        self.line.setObjectName("line")
+        self.fr_thongtin = QtWidgets.QFrame(parent=self.frame)
+        self.fr_thongtin.setGeometry(QtCore.QRect(10, 60, 451, 541))
+        self.fr_thongtin.setStyleSheet("#frame{\n"
+"    border: 1px solid black\n"
+"}\n"
+"QPushButton{\n"
+"    padding: 15px 5px;\n"
+"    background-color: #D5EDF9;\n"
+"}\n"
+"#gridLayout{\n"
+"    border: 1px solid black;\n"
+"}\n"
+"")
+        self.fr_thongtin.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        self.fr_thongtin.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.fr_thongtin.setObjectName("fr_thongtin")
+        self.grbx_canhan = QtWidgets.QGroupBox(parent=self.fr_thongtin)
+        self.grbx_canhan.setGeometry(QtCore.QRect(30, 60, 371, 451))
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        font.setBold(True)
+        font.setWeight(75)
+        self.grbx_canhan.setFont(font)
+        self.grbx_canhan.setStyleSheet("QLabel, QPushButton{\n"
+"    font-size: 14px;\n"
+"}")
+        self.grbx_canhan.setTitle("")
+        self.grbx_canhan.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.grbx_canhan.setObjectName("grbx_canhan")
+        self.lb_hoten = QtWidgets.QLabel(parent=self.grbx_canhan)
+        self.lb_hoten.setGeometry(QtCore.QRect(40, 40, 71, 41))
+        font = QtGui.QFont()
+        font.setPointSize(-1)
+        self.lb_hoten.setFont(font)
+        self.lb_hoten.setObjectName("lb_hoten")
+        self.lb_namsinh = QtWidgets.QLabel(parent=self.grbx_canhan)
+        self.lb_namsinh.setGeometry(QtCore.QRect(40, 140, 90, 41))
+        font = QtGui.QFont()
+        font.setPointSize(-1)
+        self.lb_namsinh.setFont(font)
+        self.lb_namsinh.setObjectName("lb_namsinh")
+        self.lb_cccd = QtWidgets.QLabel(parent=self.grbx_canhan)
+        self.lb_cccd.setGeometry(QtCore.QRect(40, 190, 57, 41))
+        font = QtGui.QFont()
+        font.setPointSize(-1)
+        self.lb_cccd.setFont(font)
+        self.lb_cccd.setObjectName("lb_cccd")
+        self.lb_gioitinh = QtWidgets.QLabel(parent=self.grbx_canhan)
+        self.lb_gioitinh.setGeometry(QtCore.QRect(40, 240, 81, 41))
+        font = QtGui.QFont()
+        font.setPointSize(-1)
+        self.lb_gioitinh.setFont(font)
+        self.lb_gioitinh.setObjectName("lb_gioitinh")
+        self.lb_email = QtWidgets.QLabel(parent=self.grbx_canhan)
+        self.lb_email.setGeometry(QtCore.QRect(40, 290, 56, 41))
+        font = QtGui.QFont()
+        font.setPointSize(-1)
+        self.lb_email.setFont(font)
+        self.lb_email.setObjectName("lb_email")
+        self.lb_sdt = QtWidgets.QLabel(parent=self.grbx_canhan)
+        self.lb_sdt.setGeometry(QtCore.QRect(40, 340, 44, 41))
+        font = QtGui.QFont()
+        font.setPointSize(-1)
+        self.lb_sdt.setFont(font)
+        self.lb_sdt.setObjectName("lb_sdt")
+        self.txt_mabh = QtWidgets.QTextEdit(parent=self.grbx_canhan)
+        self.txt_mabh.setEnabled(False)
+        self.txt_mabh.setGeometry(QtCore.QRect(120, 40, 211, 41))
+        font = QtGui.QFont()
+        font.setPointSize(-1)
+        self.txt_mabh.setFont(font)
+        self.txt_mabh.setReadOnly(True)
+        self.txt_mabh.setMarkdown("")
+        self.txt_mabh.setObjectName("txt_mabh")
+        self.lb_lophoc = QtWidgets.QLabel(parent=self.grbx_canhan)
+        self.lb_lophoc.setGeometry(QtCore.QRect(40, 390, 71, 41))
+        font = QtGui.QFont()
+        font.setPointSize(-1)
+        self.lb_lophoc.setFont(font)
+        self.lb_lophoc.setObjectName("lb_lophoc")
+        self.lb_hoten_2 = QtWidgets.QLabel(parent=self.grbx_canhan)
+        self.lb_hoten_2.setGeometry(QtCore.QRect(40, 90, 71, 41))
+        font = QtGui.QFont()
+        font.setPointSize(-1)
+        self.lb_hoten_2.setFont(font)
+        self.lb_hoten_2.setObjectName("lb_hoten_2")
+        self.txt_mh = QtWidgets.QTextEdit(parent=self.grbx_canhan)
+        self.txt_mh.setEnabled(False)
+        self.txt_mh.setGeometry(QtCore.QRect(120, 90, 211, 41))
+        font = QtGui.QFont()
+        font.setPointSize(-1)
+        self.txt_mh.setFont(font)
+        self.txt_mh.setReadOnly(True)
+        self.txt_mh.setMarkdown("")
+        self.txt_mh.setObjectName("txt_mh")
+        self.txt_gv = QtWidgets.QTextEdit(parent=self.grbx_canhan)
+        self.txt_gv.setEnabled(False)
+        self.txt_gv.setGeometry(QtCore.QRect(120, 140, 211, 41))
+        font = QtGui.QFont()
+        font.setPointSize(-1)
+        self.txt_gv.setFont(font)
+        self.txt_gv.setReadOnly(True)
+        self.txt_gv.setMarkdown("")
+        self.txt_gv.setObjectName("txt_gv")
+        self.txt_tuan = QtWidgets.QTextEdit(parent=self.grbx_canhan)
+        self.txt_tuan.setEnabled(False)
+        self.txt_tuan.setGeometry(QtCore.QRect(120, 190, 211, 41))
+        font = QtGui.QFont()
+        font.setPointSize(-1)
+        self.txt_tuan.setFont(font)
+        self.txt_tuan.setReadOnly(True)
+        self.txt_tuan.setMarkdown("")
+        self.txt_tuan.setObjectName("txt_tuan")
+        self.txt_tietbd = QtWidgets.QTextEdit(parent=self.grbx_canhan)
+        self.txt_tietbd.setEnabled(False)
+        self.txt_tietbd.setGeometry(QtCore.QRect(120, 240, 211, 41))
+        font = QtGui.QFont()
+        font.setPointSize(-1)
+        self.txt_tietbd.setFont(font)
+        self.txt_tietbd.setReadOnly(True)
+        self.txt_tietbd.setMarkdown("")
+        self.txt_tietbd.setObjectName("txt_tietbd")
+        self.txt_tietkt = QtWidgets.QTextEdit(parent=self.grbx_canhan)
+        self.txt_tietkt.setEnabled(False)
+        self.txt_tietkt.setGeometry(QtCore.QRect(120, 290, 211, 41))
+        font = QtGui.QFont()
+        font.setPointSize(-1)
+        self.txt_tietkt.setFont(font)
+        self.txt_tietkt.setReadOnly(True)
+        self.txt_tietkt.setMarkdown("")
+        self.txt_tietkt.setObjectName("txt_tietkt")
+        self.txt_ngay = QtWidgets.QTextEdit(parent=self.grbx_canhan)
+        self.txt_ngay.setEnabled(False)
+        self.txt_ngay.setGeometry(QtCore.QRect(120, 340, 211, 41))
+        font = QtGui.QFont()
+        font.setPointSize(-1)
+        self.txt_ngay.setFont(font)
+        self.txt_ngay.setReadOnly(True)
+        self.txt_ngay.setMarkdown("")
+        self.txt_ngay.setObjectName("txt_ngay")
+        self.txt_lop = QtWidgets.QTextEdit(parent=self.grbx_canhan)
+        self.txt_lop.setEnabled(False)
+        self.txt_lop.setGeometry(QtCore.QRect(120, 390, 211, 41))
+        font = QtGui.QFont()
+        font.setPointSize(-1)
+        self.txt_lop.setFont(font)
+        self.txt_lop.setReadOnly(True)
+        self.txt_lop.setMarkdown("")
+        self.txt_lop.setObjectName("txt_lop")
+        self.lb_thongtin = QtWidgets.QLabel(parent=self.fr_thongtin)
+        self.lb_thongtin.setGeometry(QtCore.QRect(4, 10, 431, 31))
+        font = QtGui.QFont()
+        font.setPointSize(-1)
+        font.setBold(True)
+        font.setWeight(75)
+        self.lb_thongtin.setFont(font)
+        self.lb_thongtin.setStyleSheet("font-size: 20px;\n"
+"font-weight: bold;")
+        self.lb_thongtin.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.lb_thongtin.setObjectName("lb_thongtin")
+        self.fr_sinhvien = QtWidgets.QFrame(parent=self.frame)
+        self.fr_sinhvien.setGeometry(QtCore.QRect(469, 60, 921, 541))
+        self.fr_sinhvien.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        self.fr_sinhvien.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.fr_sinhvien.setObjectName("fr_sinhvien")
+        self.lb_thongtin_2 = QtWidgets.QLabel(parent=self.fr_sinhvien)
+        self.lb_thongtin_2.setGeometry(QtCore.QRect(10, 10, 901, 31))
+        font = QtGui.QFont()
+        font.setPointSize(-1)
+        font.setBold(True)
+        font.setWeight(75)
+        self.lb_thongtin_2.setFont(font)
+        self.lb_thongtin_2.setStyleSheet("font-size: 20px;\n"
+"font-weight: bold;\n"
+"")
+        self.lb_thongtin_2.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.lb_thongtin_2.setObjectName("lb_thongtin_2")
+        self.tbDiemdanh = QtWidgets.QTableWidget(parent=self.fr_sinhvien)
+        self.tbDiemdanh.setGeometry(QtCore.QRect(10, 50, 901, 481))
+        self.tbDiemdanh.setSelectionBehavior(QtWidgets.QAbstractItemView.SelectionBehavior.SelectRows)
+        self.tbDiemdanh.setObjectName("tbDiemdanh")
+        self.tbDiemdanh.setColumnCount(6)
+        self.tbDiemdanh.setRowCount(0)
+        item = QtWidgets.QTableWidgetItem()
+        self.tbDiemdanh.setHorizontalHeaderItem(0, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tbDiemdanh.setHorizontalHeaderItem(1, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tbDiemdanh.setHorizontalHeaderItem(2, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tbDiemdanh.setHorizontalHeaderItem(3, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tbDiemdanh.setHorizontalHeaderItem(4, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tbDiemdanh.setHorizontalHeaderItem(5, item)
+        self.tbDiemdanh.horizontalHeader().setDefaultSectionSize(140)
+        self.tbDiemdanh.horizontalHeader().setMinimumSectionSize(50)
+        self.lbAleart = QtWidgets.QLabel(parent=self.frame)
+        self.lbAleart.setGeometry(QtCore.QRect(10, 700, 1371, 61))
+        self.lbAleart.setStyleSheet("font:20pt \"Arial\";\n"
+"color:red;")
+        self.lbAleart.setText("")
+        self.lbAleart.setObjectName("lbAleart")
+        self.btnBuoihoc = QtWidgets.QPushButton(parent=self.frame)
+        self.btnBuoihoc.setGeometry(QtCore.QRect(150, 610, 161, 51))
+        self.btnBuoihoc.setObjectName("btnBuoihoc")
+        self.btnDelete = QtWidgets.QPushButton(parent=self.frame)
+        self.btnDelete.setGeometry(QtCore.QRect(1230, 610, 161, 51))
+        self.btnDelete.setObjectName("btnDelete")
+        self.btnOpenCam = QtWidgets.QPushButton(parent=self.frame)
+        self.btnOpenCam.setGeometry(QtCore.QRect(470, 610, 151, 51))
         self.btnOpenCam.setStyleSheet("font: 75 10pt \"MS Shell Dlg 2\";")
         self.btnOpenCam.setObjectName("btnOpenCam")
-        self.btnCloseCam = QtWidgets.QPushButton(parent=self.widget_2)
-        self.btnCloseCam.setGeometry(QtCore.QRect(430, 20, 261, 41))
+        self.btnCloseCam = QtWidgets.QPushButton(parent=self.frame)
+        self.btnCloseCam.setGeometry(QtCore.QRect(630, 610, 161, 51))
         self.btnCloseCam.setStyleSheet("font: 75 10pt \"MS Shell Dlg 2\";")
         self.btnCloseCam.setObjectName("btnCloseCam")
-        self.groupBox_2 = QtWidgets.QGroupBox(parent=self.panel1)
-        self.groupBox_2.setGeometry(QtCore.QRect(870, 140, 501, 361))
-        self.groupBox_2.setObjectName("groupBox_2")
-        self.widget_3 = QtWidgets.QWidget(parent=self.groupBox_2)
-        self.widget_3.setGeometry(QtCore.QRect(210, 20, 120, 141))
-        self.widget_3.setAutoFillBackground(True)
-        self.widget_3.setObjectName("widget_3")
-        self.gridLayoutWidget = QtWidgets.QWidget(parent=self.groupBox_2)
-        self.gridLayoutWidget.setGeometry(QtCore.QRect(70, 170, 381, 227))
-        self.gridLayoutWidget.setObjectName("gridLayoutWidget")
-        self.gridLayout = QtWidgets.QGridLayout(self.gridLayoutWidget)
-        self.gridLayout.setContentsMargins(0, 0, 0, 0)
-        self.gridLayout.setObjectName("gridLayout")
-        self.label_6 = QtWidgets.QLabel(parent=self.gridLayoutWidget)
-        self.label_6.setObjectName("label_6")
-        self.gridLayout.addWidget(self.label_6, 2, 0, 1, 1)
-        self.label_4 = QtWidgets.QLabel(parent=self.gridLayoutWidget)
-        self.label_4.setObjectName("label_4")
-        self.gridLayout.addWidget(self.label_4, 0, 0, 1, 1)
-        self.label_5 = QtWidgets.QLabel(parent=self.gridLayoutWidget)
-        self.label_5.setObjectName("label_5")
-        self.gridLayout.addWidget(self.label_5, 1, 0, 1, 1)
-        self.textEdit = QtWidgets.QTextEdit(parent=self.gridLayoutWidget)
-        self.textEdit.setObjectName("textEdit")
-        self.gridLayout.addWidget(self.textEdit, 0, 1, 1, 1)
-        self.textEdit_3 = QtWidgets.QTextEdit(parent=self.gridLayoutWidget)
-        self.textEdit_3.setObjectName("textEdit_3")
-        self.gridLayout.addWidget(self.textEdit_3, 2, 1, 1, 1)
-        self.textEdit_2 = QtWidgets.QTextEdit(parent=self.gridLayoutWidget)
-        self.textEdit_2.setObjectName("textEdit_2")
-        self.gridLayout.addWidget(self.textEdit_2, 1, 1, 1, 1)
-        self.groupBox_3 = QtWidgets.QGroupBox(parent=self.panel1)
-        self.groupBox_3.setGeometry(QtCore.QRect(879, 540, 491, 181))
-        self.groupBox_3.setObjectName("groupBox_3")
-        self.verticalLayoutWidget = QtWidgets.QWidget(parent=self.groupBox_3)
-        self.verticalLayoutWidget.setGeometry(QtCore.QRect(10, 30, 161, 131))
-        self.verticalLayoutWidget.setObjectName("verticalLayoutWidget")
-        self.verticalLayout = QtWidgets.QVBoxLayout(self.verticalLayoutWidget)
-        self.verticalLayout.setContentsMargins(0, 0, 0, 0)
-        self.verticalLayout.setObjectName("verticalLayout")
-        self.label_10 = QtWidgets.QLabel(parent=self.verticalLayoutWidget)
-        self.label_10.setObjectName("label_10")
-        self.verticalLayout.addWidget(self.label_10)
-        self.label_12 = QtWidgets.QLabel(parent=self.verticalLayoutWidget)
-        self.label_12.setObjectName("label_12")
-        self.verticalLayout.addWidget(self.label_12)
-        self.label_11 = QtWidgets.QLabel(parent=self.verticalLayoutWidget)
-        self.label_11.setObjectName("label_11")
-        self.verticalLayout.addWidget(self.label_11)
-        self.verticalLayoutWidget_2 = QtWidgets.QWidget(parent=self.groupBox_3)
-        self.verticalLayoutWidget_2.setGeometry(QtCore.QRect(189, 30, 231, 227))
-        self.verticalLayoutWidget_2.setObjectName("verticalLayoutWidget_2")
-        self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.verticalLayoutWidget_2)
-        self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
-        self.verticalLayout_2.setObjectName("verticalLayout_2")
-        self.textEdit_5 = QtWidgets.QTextEdit(parent=self.verticalLayoutWidget_2)
-        self.textEdit_5.setObjectName("textEdit_5")
-        self.verticalLayout_2.addWidget(self.textEdit_5)
-        self.textEdit_6 = QtWidgets.QTextEdit(parent=self.verticalLayoutWidget_2)
-        self.textEdit_6.setObjectName("textEdit_6")
-        self.verticalLayout_2.addWidget(self.textEdit_6)
-        self.textEdit_4 = QtWidgets.QTextEdit(parent=self.verticalLayoutWidget_2)
-        self.textEdit_4.setObjectName("textEdit_4")
-        self.verticalLayout_2.addWidget(self.textEdit_4)
+        self.lbCamera = QtWidgets.QLabel(parent=self.frame)
+        self.lbCamera.setGeometry(QtCore.QRect(1340, 780, 47, 13))
+        self.lbCamera.setText("")
+        self.lbCamera.setObjectName("lbCamera")
 
         self.retranslateUi(Attendence)
         QtCore.QMetaObject.connectSlotsByName(Attendence)
@@ -164,24 +291,73 @@ class Ui_Attendence(object):
     def retranslateUi(self, Attendence):
         _translate = QtCore.QCoreApplication.translate
         Attendence.setWindowTitle(_translate("Attendence", "Form"))
-        self.label1.setText(_translate("Attendence", "HỆ THỐNG ĐIỂM DANH KHUÔN MẶT"))
-        self.groupBox.setTitle(_translate("Attendence", "Màn hình nhận diện"))
-        self.label.setText(_translate("Attendence", "Môn học"))
-        self.label_7.setText(_translate("Attendence", "Buổi học"))
-        self.label_2.setText(_translate("Attendence", "Loại điểm danh"))
-        self.comboBox.setItemText(0, _translate("Attendence", "Vào"))
-        self.comboBox.setItemText(1, _translate("Attendence", "Ra"))
-        self.label_3.setText(_translate("Attendence", "Thông báo:"))
+        self.lb_main.setText(_translate("Attendence", "ĐIỂM DANH BUỔI HỌC"))
+        self.lb_hoten.setText(_translate("Attendence", "Mã BH"))
+        self.lb_namsinh.setText(_translate("Attendence", "Giảng viên"))
+        self.lb_cccd.setText(_translate("Attendence", "Tuần thứ"))
+        self.lb_gioitinh.setText(_translate("Attendence", "Tiết BĐ"))
+        self.lb_email.setText(_translate("Attendence", "Tiết KT"))
+        self.lb_sdt.setText(_translate("Attendence", "Ngày"))
+        self.txt_mabh.setHtml(_translate("Attendence", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:14px; font-weight:400; font-style:normal;\">\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
+        self.lb_lophoc.setText(_translate("Attendence", "Lớp"))
+        self.lb_hoten_2.setText(_translate("Attendence", "Môn học"))
+        self.txt_mh.setHtml(_translate("Attendence", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:14px; font-weight:400; font-style:normal;\">\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
+        self.txt_gv.setHtml(_translate("Attendence", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:14px; font-weight:400; font-style:normal;\">\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
+        self.txt_tuan.setHtml(_translate("Attendence", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:14px; font-weight:400; font-style:normal;\">\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
+        self.txt_tietbd.setHtml(_translate("Attendence", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:14px; font-weight:400; font-style:normal;\">\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
+        self.txt_tietkt.setHtml(_translate("Attendence", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:14px; font-weight:400; font-style:normal;\">\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
+        self.txt_ngay.setHtml(_translate("Attendence", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:14px; font-weight:400; font-style:normal;\">\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
+        self.txt_lop.setHtml(_translate("Attendence", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:14px; font-weight:400; font-style:normal;\">\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
+        self.lb_thongtin.setText(_translate("Attendence", "THÔNG TIN BUỔI HỌC"))
+        self.lb_thongtin_2.setText(_translate("Attendence", "DANH SÁCH ĐIỂM DANH"))
+        item = self.tbDiemdanh.horizontalHeaderItem(0)
+        item.setText(_translate("Attendence", "Mã buổi học"))
+        item = self.tbDiemdanh.horizontalHeaderItem(1)
+        item.setText(_translate("Attendence", "Mã SV"))
+        item = self.tbDiemdanh.horizontalHeaderItem(2)
+        item.setText(_translate("Attendence", "Họ tên"))
+        item = self.tbDiemdanh.horizontalHeaderItem(3)
+        item.setText(_translate("Attendence", "Giờ vào"))
+        item = self.tbDiemdanh.horizontalHeaderItem(4)
+        item.setText(_translate("Attendence", "Trạng thái"))
+        item = self.tbDiemdanh.horizontalHeaderItem(5)
+        item.setText(_translate("Attendence", "Chi tiết"))
+        self.btnBuoihoc.setText(_translate("Attendence", "Chọn buổi học"))
+        self.btnDelete.setText(_translate("Attendence", "Xóa điểm danh"))
         self.btnOpenCam.setText(_translate("Attendence", "Mở camera"))
         self.btnCloseCam.setText(_translate("Attendence", "Đóng camera"))
-        self.groupBox_2.setTitle(_translate("Attendence", "điểm danh thành công"))
-        self.label_6.setText(_translate("Attendence", "thời gian"))
-        self.label_4.setText(_translate("Attendence", "ID sinh viên"))
-        self.label_5.setText(_translate("Attendence", "tên sinh viên"))
-        self.groupBox_3.setTitle(_translate("Attendence", "Thông tin buổi học"))
-        self.label_10.setText(_translate("Attendence", "Lớp :"))
-        self.label_12.setText(_translate("Attendence", "Tên môn học/ID buối học:"))
-        self.label_11.setText(_translate("Attendence", "Thời gian:"))
 
 
 if __name__ == "__main__":

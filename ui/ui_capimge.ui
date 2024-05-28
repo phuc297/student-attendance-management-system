@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Capimge</class>
- <widget class="QWidget" name="Capimge">
+ <class>StudentImage</class>
+ <widget class="QWidget" name="StudentImage">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -95,32 +95,6 @@
       <string/>
      </property>
     </widget>
-    <widget class="QSplitter" name="splitter">
-     <property name="geometry">
-      <rect>
-       <x>1050</x>
-       <y>500</y>
-       <width>241</width>
-       <height>51</height>
-      </rect>
-     </property>
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-     <widget class="QPushButton" name="btn_mocam">
-      <property name="text">
-       <string>Mở/ Đóng camera</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="btn_chupanh">
-      <property name="styleSheet">
-       <string notr="true">font-size: 14px</string>
-      </property>
-      <property name="text">
-       <string>Chụp ảnh</string>
-      </property>
-     </widget>
-    </widget>
     <widget class="QLabel" name="label">
      <property name="geometry">
       <rect>
@@ -140,14 +114,14 @@
     <widget class="QPushButton" name="btn_dong">
      <property name="geometry">
       <rect>
-       <x>1180</x>
-       <y>570</y>
-       <width>111</width>
-       <height>41</height>
+       <x>820</x>
+       <y>490</y>
+       <width>121</width>
+       <height>51</height>
       </rect>
      </property>
      <property name="text">
-      <string>Đóng</string>
+      <string>Đóng Camera</string>
      </property>
     </widget>
     <widget class="QPushButton" name="btn_xoa">
@@ -174,24 +148,6 @@
      </property>
      <property name="styleSheet">
       <string notr="true">font-size:20px</string>
-     </property>
-     <item>
-      <property name="text">
-       <string>New Item</string>
-      </property>
-     </item>
-    </widget>
-    <widget class="QPushButton" name="btn_xacnhan">
-     <property name="geometry">
-      <rect>
-       <x>1060</x>
-       <y>570</y>
-       <width>111</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Xác nhận</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_2">
@@ -243,6 +199,58 @@ font-weight: bold;</string>
        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
+    </widget>
+    <widget class="QPushButton" name="btn_mocam">
+     <property name="geometry">
+      <rect>
+       <x>680</x>
+       <y>490</y>
+       <width>121</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Mở camera</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_chupanh">
+     <property name="geometry">
+      <rect>
+       <x>1160</x>
+       <y>490</y>
+       <width>121</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Chụp ảnh</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_xacnhan">
+     <property name="geometry">
+      <rect>
+       <x>1160</x>
+       <y>550</y>
+       <width>121</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Xác nhận</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lb_numimg">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>510</y>
+       <width>101</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Số ảnh</string>
+     </property>
     </widget>
    </widget>
   </widget>
