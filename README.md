@@ -33,15 +33,6 @@ This project is a face recognition and attendance management system built using 
 
 2. Follow the on-screen instructions to navigate through the application.
 
-## Contributing
-
-Contributions are welcome! Please follow these steps:
-
-1. Fork the repository.
-2. Create a new branch for your feature or bug fix.
-3. Commit your changes and push them to your fork.
-4. Submit a pull request.
-
 
 ## Acknowledgments
 
